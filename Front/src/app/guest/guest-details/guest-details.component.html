@@ -1,0 +1,10 @@
+<!-- guest-details.component.html -->
+<div *ngIf="guest">
+    <h3>Detalhes do Convidado</h3>
+    <p><strong>ID:</strong> {{ guest.id }}</p>
+    <p><strong>Nome:</strong> {{ guest.name }}</p>
+    <p><strong>Email:</strong> {{ guest.email }}</p>
+    <p><strong>Status:</strong> {{ guest.confirm }}</p>
+    <!-- Adicione mais detalhes conforme necessário -->
+    <button [routerLink]="['/guest']">Voltar</button>
+</div>

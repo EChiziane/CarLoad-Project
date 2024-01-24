@@ -1,0 +1,119 @@
+<!-- guest-list.component.html -->
+<div class="header-page">
+    <label><h2>Lista de CarLoads</h2></label>
+</div>
+
+<div>
+    <button
+            [routerLink]="['/carload/create']" class="full-width-button"
+            color="primary" mat-raised-button>Adicionar
+    </button>
+</div>
+
+
+<!--<div>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let guest of guests">
+      <td>{{ guest.id }}</td>
+      <td>{{ guest.name }}</td>
+      <td>{{ guest.email }}</td>
+      <td>{{ guest.confirm}}</td>
+      <td>
+        <button [routerLink]="['/detail',guest.id]" >View</button>
+        <button (click)="deleteGuest(guest.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>-->
+
+<div class="mat-elevation-z8">
+    <table [dataSource]="dataSource" mat-table>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th *matHeaderCellDef mat-header-cell> No.</th>
+            <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="clientName">
+            <th *matHeaderCellDef mat-header-cell>Client Name</th>
+            <td *matCellDef="let element" mat-cell> {{element.clientName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="managerName">
+            <th *matHeaderCellDef mat-header-cell>Manager Name</th>
+            <td *matCellDef="let element" mat-cell> {{element.managerName}} </td>
+
+        </ng-container>
+
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="driverName">
+            <th *matHeaderCellDef mat-header-cell>Driver Name</th>
+            <td *matCellDef="let element" mat-cell> {{element.driverName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="destination">
+            <th *matHeaderCellDef mat-header-cell>Destination</th>
+            <td *matCellDef="let element" mat-cell> {{element.destination}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="earnings">
+            <th *matHeaderCellDef mat-header-cell>Earnings</th>
+            <td *matCellDef="let element" mat-cell> {{element.earnings}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="fuelExpense">
+            <th *matHeaderCellDef mat-header-cell>Fuel Expense</th>
+            <td *matCellDef="let element" mat-cell> {{element.fuelExpense}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="policeExpense">
+            <th *matHeaderCellDef mat-header-cell>Police Expense</th>
+            <td *matCellDef="let element" mat-cell> {{element.policeExpense}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="cargoName">
+            <th *matHeaderCellDef mat-header-cell>Cargo Name</th>
+            <td *matCellDef="let element" mat-cell> {{element.cargoName}} </td>
+        </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="actions">
+            <th *matHeaderCellDef mat-header-cell> Actions</th>
+            <td *matCellDef="let element" mat-cell>
+                <mat-icon [routerLink]="['carload/detail',element.id]">visibility</mat-icon>
+                <mat-icon>edit</mat-icon>
+                <mat-icon>delete</mat-icon>
+            </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   aria-label="Select page of periodic elements"
+                   showFirstLastButtons>
+    </mat-paginator>
+</div>
+
+
+

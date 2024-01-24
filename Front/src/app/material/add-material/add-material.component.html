@@ -1,0 +1,19 @@
+<div class="mat-add-content">
+    <div class="mat-add-header">
+        <h3>
+            <mat-label>Insert Material</mat-label>
+        </h3>
+    </div>
+    <form (ngSubmit)="createMaterial()" [formGroup]="profileForm">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Type</mat-label>
+            <input formControlName="type" matInput placeholder="Ex. Areia Grossa" value="">
+        </mat-form-field>
+
+
+        <div class="mat-add-actions">
+            <button color="primary" mat-button type="submit">Save</button>
+            <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
+        </div>
+    </form>
+</div>

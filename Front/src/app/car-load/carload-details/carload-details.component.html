@@ -1,0 +1,12 @@
+<!-- driver-details.component.html -->
+<div *ngIf="carload">
+    <h3>Detalhes da Carrada</h3>
+    <p><strong>ID:</strong> {{ carload.id }}</p>
+    <p><strong>Material:</strong> {{ carload.cargoName }}</p>
+    <p><strong>Client Name:</strong> {{ carload.clientName }}</p>
+    <p><strong>Destination:</strong> {{ carload.destination }}</p>
+    <p><strong>Fuel:</strong> {{ carload.fuelExpense }}</p>
+    <p><strong>Manager:</strong> {{ carload.managerName}}</p>
+    <!-- Adicione mais detalhes conforme necessário -->
+    <button [routerLink]="['/carload']">Voltar</button>
+</div>
