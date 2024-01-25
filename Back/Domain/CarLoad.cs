@@ -8,6 +8,11 @@ public class CarLoad : BaseEntity
     public decimal Earnings { get; set; }
     public decimal FuelExpense { get; set; }
     public decimal PoliceExpense { get; set; }
+    public decimal Toll { get; set; }
+    public decimal Expenses { get; set; }
+    public decimal DriverExpenses { get; set; }
+    public decimal ManagerExpenses { get; set; }
+    public decimal PurchaseMoney { get; set; }
     public int DriverId { get; set; }
 
     [ForeignKey("DriverId")] public Driver Driver { get; set; }

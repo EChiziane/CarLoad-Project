@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.Specifications.Carloads;
 using AutoMapper;
 using Domain;
 using MediatR;
@@ -13,8 +14,8 @@ public class ListCarload
 
     public class ListCarloadQueryHandler : IRequestHandler<ListCarloadQuery, List<CarLoadDto>>
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
         public ListCarloadQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
@@ -24,8 +25,9 @@ public class ListCarload
 
         public async Task<List<CarLoadDto>> Handle(ListCarloadQuery request, CancellationToken cancellationToken)
         {
-            var carloads = await _unitOfWork.Repository<CarLoad>().ListAllAsync();
-            return _mapper.Map<List<CarLoad>,List<CarLoadDto>>(carloads);
+            var spec = new GetCarLoadsSpecification();
+            var carloads = await _unitOfWork.Repository<CarLoad>().ListWithSpecAsync(spec);
+            return _mapper.Map<List<CarLoad>, List<CarLoadDto>>(carloads);
         }
     }
 }

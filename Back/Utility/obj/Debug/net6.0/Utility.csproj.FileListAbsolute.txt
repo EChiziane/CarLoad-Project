@@ -94,3 +94,15 @@ D:\Docs\Code World\Code\Guest-CRUD\Back\Utility\obj\Debug\net6.0\Utility.dll
 D:\Docs\Code World\Code\Guest-CRUD\Back\Utility\obj\Debug\net6.0\refint\Utility.dll
 D:\Docs\Code World\Code\Guest-CRUD\Back\Utility\obj\Debug\net6.0\Utility.pdb
 D:\Docs\Code World\Code\Guest-CRUD\Back\Utility\obj\Debug\net6.0\ref\Utility.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\bin\Debug\net6.0\Utility.deps.json
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\bin\Debug\net6.0\Utility.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\bin\Debug\net6.0\Utility.pdb
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.csproj.AssemblyReference.cache
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.AssemblyInfoInputs.cache
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.AssemblyInfo.cs
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.csproj.CoreCompileInputs.cache
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\refint\Utility.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\Utility.pdb
+D:\Docs\Code World\Code\CarLoad_Project\Back\Utility\obj\Debug\net6.0\ref\Utility.dll

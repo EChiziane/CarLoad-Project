@@ -46,3 +46,15 @@ D:\Docs\Code World\Code\Guest-CRUD\Back\Domain\obj\Debug\net6.0\Domain.dll
 D:\Docs\Code World\Code\Guest-CRUD\Back\Domain\obj\Debug\net6.0\refint\Domain.dll
 D:\Docs\Code World\Code\Guest-CRUD\Back\Domain\obj\Debug\net6.0\Domain.pdb
 D:\Docs\Code World\Code\Guest-CRUD\Back\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\bin\Debug\net6.0\Domain.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\bin\Debug\net6.0\Domain.pdb
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\Domain.pdb
+D:\Docs\Code World\Code\CarLoad_Project\Back\Domain\obj\Debug\net6.0\ref\Domain.dll

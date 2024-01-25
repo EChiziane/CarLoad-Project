@@ -43,10 +43,16 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<decimal>("DriverExpenses")
+                        .HasColumnType("numeric");
+
                     b.Property<int>("DriverId")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Earnings")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Expenses")
                         .HasColumnType("numeric");
 
                     b.Property<decimal>("FuelExpense")
@@ -58,6 +64,9 @@ namespace Persistence.Migrations
                     b.Property<string>("LastUpdatedByUserId")
                         .HasColumnType("text");
 
+                    b.Property<decimal>("ManagerExpenses")
+                        .HasColumnType("numeric");
+
                     b.Property<int>("ManagerId")
                         .HasColumnType("integer");
 
@@ -65,6 +74,12 @@ namespace Persistence.Migrations
                         .HasColumnType("integer");
 
                     b.Property<decimal>("PoliceExpense")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("PurchaseMoney")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Toll")
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");

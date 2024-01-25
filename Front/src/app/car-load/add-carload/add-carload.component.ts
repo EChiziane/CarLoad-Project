@@ -36,10 +36,12 @@ export class AddCarloadComponent implements OnInit {
         earnings: new FormControl(''),
         fuelExpense: new FormControl(''),
         policeExpense: new FormControl(''),
-        driverName: new FormControl(''),
-        managerName: new FormControl(''),
-        clientName: new FormControl(''),
-        cargoName: new FormControl(''),
+        driverId: new FormControl(''),
+        managerId: new FormControl(''),
+        clientId: new FormControl(''),
+        materialId: new FormControl(''),
+        toll: new FormControl(''),
+        purchaseMoney: new FormControl(''),
     })
 
     constructor(private http: HttpClient,
@@ -54,8 +56,8 @@ export class AddCarloadComponent implements OnInit {
     ngOnInit(): void {
         this.getClients();
         this.getMaterials();
-        this.getDrivers();
-        this.getManagers();
+      this.getDrivers();
+       this.getManagers();
     }
 
     public createCarLoad(): void {

@@ -2720,11 +2720,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\api\\API.csproj",
+      "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\api\\API.csproj",
+      "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\API.csproj",
       "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-      "outputPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\api\\obj\\",
+      "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2739,14 +2739,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Application\\Application.csproj": {
-              "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Application\\Application.csproj"
+            "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Application\\Application.csproj": {
+              "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Application\\Application.csproj"
             },
-            "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Infrastructure\\Infrastructure.csproj"
+            "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Infrastructure\\Infrastructure.csproj"
             },
-            "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj": {
-              "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj"
+            "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj": {
+              "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj"
             }
           }
         }

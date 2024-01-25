@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj": {}
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj": {
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-        "outputPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\obj\\",
+        "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj": {
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj",
+        "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-        "outputPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\obj\\",
+        "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -84,11 +84,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj"
+              "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj"
               },
-              "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Utility\\Utility.csproj": {
-                "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Utility\\Utility.csproj"
+              "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Utility\\Utility.csproj": {
+                "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Utility\\Utility.csproj"
               }
             }
           }
@@ -135,14 +135,14 @@
         }
       }
     },
-    "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Utility\\Utility.csproj": {
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Utility\\Utility.csproj",
+        "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Utility\\Utility.csproj",
+        "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Utility\\Utility.csproj",
         "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-        "outputPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Utility\\obj\\",
+        "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"

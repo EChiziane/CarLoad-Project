@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj": {}
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj": {
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-        "outputPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\obj\\",
+        "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"

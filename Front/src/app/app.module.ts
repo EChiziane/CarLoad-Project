@@ -34,6 +34,10 @@ import {AddMaterialComponent} from './material/add-material/add-material.compone
 import {MaterialDetailsComponent} from './material/material-details/material-details.component';
 import {ManagerComponent} from './manager/manager.component';
 import {AddManagerComponent} from './manager/add-manager/add-manager.component';
+import { LayoutComponent } from './layout/layout.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -56,6 +60,9 @@ import {AddManagerComponent} from './manager/add-manager/add-manager.component';
         MaterialDetailsComponent,
         ManagerComponent,
         AddManagerComponent,
+        LayoutComponent,
+        SideNavComponent,
+
     ],
     imports: [
         BrowserModule,
@@ -75,6 +82,9 @@ import {AddManagerComponent} from './manager/add-manager/add-manager.component';
         FormsModule,
         MatNativeDateModule,
         MatSelectModule,
+        MatSidenavModule,
+        MatListModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent]

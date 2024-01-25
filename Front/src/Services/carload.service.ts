@@ -25,8 +25,8 @@ export class CarloadService {
         return this.http.get<CarLoad>(`${this.baseURL}/${id}`);
     }
 
-    public addCarLoad(driver: CarLoad): Observable<CarLoad> {
-        return this.http.post<CarLoad>(this.baseURL, driver).pipe(take(1))
+    public addCarLoad(driver: any): Observable<any> {
+        return this.http.post<any>(this.baseURL, driver).pipe(take(1))
     }
 
 }

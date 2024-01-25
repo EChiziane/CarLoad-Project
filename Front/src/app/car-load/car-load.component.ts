@@ -13,14 +13,18 @@ import {MatTableDataSource} from "@angular/material/table";
 export class CarLoadComponent implements OnInit {
     carLoads: CarLoad[] | undefined;
     displayedColumns: string[] = ['id',
-        'clientName',
-        'managerName',
-        'driverName',
-        'destination',
+        'createdAt',
+        'materialName',
         'earnings',
+        'expenses',
+        'destination',
+        'clientName',
         'fuelExpense',
         'policeExpense',
-        'cargoName',
+        'toll',
+        'purchaseMoney',
+        'managerName',
+        'driverName',
         'actions'];
 
 
@@ -32,7 +36,9 @@ export class CarLoadComponent implements OnInit {
     }
 
     ngOnInit(): void {
+
         this.getCarLoad()
+
     }
 
     public getCarLoad(): void {

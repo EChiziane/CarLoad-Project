@@ -1248,11 +1248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Application\\Application.csproj",
+      "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-      "outputPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Application\\obj\\",
+      "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1267,11 +1267,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Domain\\Domain.csproj"
+            "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Domain\\Domain.csproj"
             },
-            "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj": {
-              "projectPath": "D:\\Docs\\Code World\\Code\\Guest-CRUD\\Back\\Persistence\\Persistence.csproj"
+            "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj": {
+              "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\Persistence\\Persistence.csproj"
             }
           }
         }

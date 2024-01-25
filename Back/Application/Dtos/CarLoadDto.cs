@@ -7,8 +7,14 @@ public class CarLoadDto
     public decimal Earnings { get; set; }
     public decimal FuelExpense { get; set; }
     public decimal PoliceExpense { get; set; }
-    public string Client { get; set; }
-    public string Manager { get; set; }
-    public string Material { get; set; }
-    public string Driver { get; set; }
+    public string ClientName { get; set; }
+    public string ManagerName { get; set; }
+    public string MaterialName { get; set; }
+    public string DriverName { get; set; }
+    public decimal DriverExpenses { get; set; }
+    public decimal Expenses { get; set; }
+    public decimal ManagerExpenses { get; set; }
+    public decimal Toll { get; set; }
+    public int PurchaseMoney { get; set; }
+    public DateTime CreatedAt { get; set; }
 }
