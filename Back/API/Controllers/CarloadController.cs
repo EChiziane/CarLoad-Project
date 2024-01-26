@@ -22,6 +22,15 @@ public class CarloadController : BaseApiController
     {
         return Ok(await _mediator.Send(new ListCarload.ListCarloadQuery()));
     }
+    
+    [HttpGet("today")]
+    [Authorize]
+    [AllowAnonymous]
+    public async Task<ActionResult<List<CarLoadDto>>> CarLoadsToday()
+    {
+        return Ok(await _mediator.Send(new GetCarLoadToday.GetCarLoadTodayQuery()));
+    }
+
 
 
     [HttpPost]

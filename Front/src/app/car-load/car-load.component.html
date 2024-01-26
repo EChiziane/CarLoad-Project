@@ -3,11 +3,21 @@
     <label><h2>Lista de CarLoads</h2></label>
 </div>
 
-<div>
-    <button
-            [routerLink]="['/carload/create']" class="full-width-button"
-            color="primary" mat-raised-button>Adicionar
-    </button>
+<div class="container">
+
+    <div class="mat-button-season">
+
+        <button mat-raised-button>Apply</button>
+        <button mat-raised-button>Today</button>
+    </div>
+
+    <div class="full-width-button">
+        <button
+                [routerLink]="['/carload/create']"
+                mat-raised-button><mat-icon>add</mat-icon>Adicionar
+        </button>
+    </div>
+
 </div>
 
 
@@ -75,25 +85,25 @@
         <!-- Weight Column -->
         <ng-container matColumnDef="earnings">
             <th *matHeaderCellDef mat-header-cell>Earnings</th>
-            <td *matCellDef="let element" mat-cell> {{element.earnings}} </td>
+            <td *matCellDef="let element" mat-cell> {{element.earnings| currency:'USD':'symbol':'1.2-2'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="expenses">
             <th *matHeaderCellDef mat-header-cell>Expenses</th>
-            <td *matCellDef="let element" mat-cell> {{element.expenses}} </td>
+            <td *matCellDef="let element" mat-cell> {{element.expenses| currency:'USD':'symbol':'1.2-2'}} </td>
         </ng-container>
 
 
         <!-- Weight Column -->
         <ng-container matColumnDef="fuelExpense">
             <th *matHeaderCellDef mat-header-cell>Fuel</th>
-            <td *matCellDef="let element" mat-cell> {{element.fuelExpense}} </td>
+            <td *matCellDef="let element" mat-cell> {{element.fuelExpense| currency:'USD':'symbol':'1.2-2'}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="policeExpense">
             <th *matHeaderCellDef mat-header-cell>Police</th>
-            <td *matCellDef="let element" mat-cell> {{element.policeExpense}} </td>
+            <td *matCellDef="let element" mat-cell> {{element.policeExpense| currency:'USD':'symbol':'1.2-2'}} </td>
         </ng-container>
 
         <!-- Weight Column -->
@@ -105,14 +115,14 @@
         <!-- Weight Column -->
         <ng-container matColumnDef="purchaseMoney">
             <th *matHeaderCellDef mat-header-cell>Purchase</th>
-            <td *matCellDef="let element" mat-cell> {{element.purchaseMoney}} </td>
+            <td *matCellDef="let element" mat-cell> {{element.purchaseMoney| currency:'USD':'symbol':'1.2-2'}} </td>
         </ng-container>
 
 
         <!-- Weight Column -->
         <ng-container matColumnDef="toll">
             <th *matHeaderCellDef mat-header-cell>Toll</th>
-            <td *matCellDef="let element" mat-cell> {{element.toll}} </td>
+            <td *matCellDef="let element" mat-cell> {{element.toll| currency:'USD':'symbol':'1.2-2'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="createdAt">

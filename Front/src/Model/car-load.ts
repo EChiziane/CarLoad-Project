@@ -13,5 +13,5 @@ export interface CarLoad {
     managerName: string;
     clientName: string;
     materialName: string;
-    createdAt: string;
+    createdAt: Date;
 }

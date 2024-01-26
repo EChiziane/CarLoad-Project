@@ -49,15 +49,15 @@ export class AddCarloadComponent implements OnInit {
                 private clientService: ClientService,
                 private driverService: DriverService,
                 private materialService: MaterialService,
-                private managerService:ManagerService,
+                private managerService: ManagerService,
                 private router: Router) {
     }
 
     ngOnInit(): void {
         this.getClients();
         this.getMaterials();
-      this.getDrivers();
-       this.getManagers();
+        this.getDrivers();
+        this.getManagers();
     }
 
     public createCarLoad(): void {
@@ -95,10 +95,10 @@ export class AddCarloadComponent implements OnInit {
         })
     }
 
-    public getManagers():void{
+    public getManagers(): void {
         this.managerService.getManagers().subscribe({
-            next:(managers:Manager[])=>{
-                this.managers=managers;
+            next: (managers: Manager[]) => {
+                this.managers = managers;
             }
         })
     }

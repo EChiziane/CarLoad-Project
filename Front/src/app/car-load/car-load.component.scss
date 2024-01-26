@@ -12,10 +12,44 @@ body {
   text-align: center;
 }
 
-.full-width-button {
-  width: 100%;
-  box-sizing: border-box; /* Garante que a largura inclua padding e borda */
+.container {
+  display: flex;
+max-height: 26%;
+  justify-content: space-between; /* Isso distribuirá o espaço entre as divs */
+
 }
+.mat-button-season,
+.full-width-button {
+  flex: 1; /* Distribui o espaço de maneira uniforme entre as divs */
+}
+.mat-button-season {
+  width: 48%;
+
+
+  button {
+    width: 20%;
+    margin-right: 2px;
+    top: 56%;
+
+  }
+}
+
+.full-width-button {
+
+  width: 48%;
+  box-sizing: border-box; /* Garante que a largura inclua padding e borda */
+  button {
+    width: 20%;
+    margin-right: 2px;
+    margin-left: 80%;
+    top: 68%;
+    mat-icon{
+      width:30%;
+    }
+  }
+
+}
+
 
 table {
   width: 100%;
@@ -24,7 +58,8 @@ table {
     cursor: pointer;
   }
 }
+
 .mat-elevation-z8 {
   overflow: auto;
-  max-height: 400px; /* Defina a altura máxima desejada */
+  max-height: 60%; /* Defina a altura máxima desejada */
 }

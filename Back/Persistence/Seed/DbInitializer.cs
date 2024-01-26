@@ -60,12 +60,12 @@ public class DbInitializer : IDbInitializer
             {
                 new()
                 {
-                    Code = "en-US", Name = "English", FrontEndCode = "en", CreatedAt = DateTime.Now,
+                    Code = "en-US", Name = "English", FrontEndCode = "en", CreatedAt = DateTime.Now.ToLongDateString(),
                     LastUpdatedAt = DateTime.Now
                 },
                 new()
                 {
-                    Code = "pt-PT", Name = "Portuguese", FrontEndCode = "pt", CreatedAt = DateTime.Now,
+                    Code = "pt-PT", Name = "Portuguese", FrontEndCode = "pt", CreatedAt = DateTime.Now.ToLongDateString(),
                     LastUpdatedAt = DateTime.Now
                 }
             };

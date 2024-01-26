@@ -38,6 +38,7 @@ import { LayoutComponent } from './layout/layout.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import {MatListModule} from "@angular/material/list";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import {MatListModule} from "@angular/material/list";
         MatSelectModule,
         MatSidenavModule,
         MatListModule,
+        MatTabsModule,
 
     ],
     providers: [],
