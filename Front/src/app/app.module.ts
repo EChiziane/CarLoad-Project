@@ -39,6 +39,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import {MatListModule} from "@angular/material/list";
 import {MatTabsModule} from "@angular/material/tabs";
+import { CloadComponent } from './cload/cload.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import {MatTabsModule} from "@angular/material/tabs";
         AddManagerComponent,
         LayoutComponent,
         SideNavComponent,
+        CloadComponent,
 
     ],
     imports: [

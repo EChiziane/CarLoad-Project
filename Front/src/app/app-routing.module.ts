@@ -17,6 +17,7 @@ import {AddMaterialComponent} from "./material/add-material/add-material.compone
 import {ManagerComponent} from "./manager/manager.component";
 import {AddManagerComponent} from "./manager/add-manager/add-manager.component";
 import {LayoutComponent} from "./layout/layout.component";
+import {CloadComponent} from "./cload/cload.component";
 
 const routes: Routes = [
     {path: 'detail/:id', component: GuestDetailsComponent},
