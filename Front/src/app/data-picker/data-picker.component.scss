@@ -1,0 +1,18 @@
+.date-range-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-range-input-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajuste a largura conforme necessário */
+.mat-form-field {
+  width: 20%;
+
+  .date-range-input-container{
+    height: 2px;
+  }
+}

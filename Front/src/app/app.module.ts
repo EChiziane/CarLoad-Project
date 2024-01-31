@@ -34,12 +34,13 @@ import {AddMaterialComponent} from './material/add-material/add-material.compone
 import {MaterialDetailsComponent} from './material/material-details/material-details.component';
 import {ManagerComponent} from './manager/manager.component';
 import {AddManagerComponent} from './manager/add-manager/add-manager.component';
-import { LayoutComponent } from './layout/layout.component';
+import {LayoutComponent} from './layout/layout.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { SideNavComponent } from './layout/side-nav/side-nav.component';
+import {SideNavComponent} from './layout/side-nav/side-nav.component';
 import {MatListModule} from "@angular/material/list";
 import {MatTabsModule} from "@angular/material/tabs";
-import { CloadComponent } from './cload/cload.component';
+import {CloadComponent} from './cload/cload.component';
+import { DataPickerComponent } from './data-picker/data-picker.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { CloadComponent } from './cload/cload.component';
         LayoutComponent,
         SideNavComponent,
         CloadComponent,
+        DataPickerComponent,
 
     ],
     imports: [

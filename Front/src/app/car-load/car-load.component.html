@@ -1,39 +1,54 @@
-<!-- guest-list.component.html -->
-
 <div class="container">
+
+
     <div class="header-page">
         <label><h2>Lista de CarLoads</h2></label>
     </div>
 
     <div class="mat-button-season">
+        <button mat-raised-button><mat-icon>print</mat-icon>Print</button>
 
-        <button mat-raised-button>Search</button>
-        <button mat-raised-button>Print</button>
+        <mat-form-field class="date-range-field" appearance="outline">
+            <mat-label>Enter a date range</mat-label>
+            <div class="date-range-input-container">
+                <mat-date-range-input [rangePicker]="picker">
+                    <input matStartDate placeholder="Start date">
+                    <input matEndDate placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            </div>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+
+
+
+        <button mat-raised-button>Search<mat-icon>search</mat-icon></button>
+
         <button
                 [routerLink]="['/carload/create']"
-                mat-raised-button><mat-icon>add</mat-icon>Add
+                mat-raised-button>
+            <mat-icon>add</mat-icon>
+            Add
         </button>
     </div>
 
-    <div class="full-width-button">
-
-
-        <div class="mat-elevation-z8">
+  <div class="mat-main-content">
+        <div class="mat-table-content">
             <table [dataSource]="dataSource" mat-table>
 
-                <!-- Position Column -->
+                &lt;!&ndash; Position Column &ndash;&gt;
                 <ng-container matColumnDef="id">
                     <th *matHeaderCellDef mat-header-cell> No.</th>
-                    <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+                    <td *matCellDef="let element" class="mat-table-bolded-id" mat-cell> {{element.id}} </td>
                 </ng-container>
 
-                <!-- Name Column -->
+                &lt;!&ndash; Name Column &ndash;&gt;
                 <ng-container matColumnDef="clientName">
                     <th *matHeaderCellDef mat-header-cell>Client</th>
                     <td *matCellDef="let element" mat-cell> {{element.clientName}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="managerName">
                     <th *matHeaderCellDef mat-header-cell>Manager</th>
                     <td *matCellDef="let element" mat-cell> {{element.managerName}} </td>
@@ -41,19 +56,19 @@
                 </ng-container>
 
 
-                <!-- Symbol Column -->
+                &lt;!&ndash; Symbol Column &ndash;&gt;
                 <ng-container matColumnDef="driverName">
                     <th *matHeaderCellDef mat-header-cell>Driver</th>
                     <td *matCellDef="let element" mat-cell> {{element.driverName}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="destination">
                     <th *matHeaderCellDef mat-header-cell>Destination</th>
                     <td *matCellDef="let element" mat-cell> {{element.destination}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="earnings">
                     <th *matHeaderCellDef mat-header-cell>Earnings</th>
                     <td *matCellDef="let element" mat-cell> {{element.earnings| currency:'USD':'symbol':'1.2-2'}} </td>
@@ -65,32 +80,35 @@
                 </ng-container>
 
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="fuelExpense">
                     <th *matHeaderCellDef mat-header-cell>Fuel</th>
-                    <td *matCellDef="let element" mat-cell> {{element.fuelExpense| currency:'USD':'symbol':'1.2-2'}} </td>
+                    <td *matCellDef="let element"
+                        mat-cell> {{element.fuelExpense| currency:'USD':'symbol':'1.2-2'}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="policeExpense">
                     <th *matHeaderCellDef mat-header-cell>Police</th>
-                    <td *matCellDef="let element" mat-cell> {{element.policeExpense| currency:'USD':'symbol':'1.2-2'}} </td>
+                    <td *matCellDef="let element"
+                        mat-cell> {{element.policeExpense| currency:'USD':'symbol':'1.2-2'}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="materialName">
                     <th *matHeaderCellDef mat-header-cell>Material</th>
                     <td *matCellDef="let element" mat-cell> {{element.materialName}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="purchaseMoney">
                     <th *matHeaderCellDef mat-header-cell>Purchase</th>
-                    <td *matCellDef="let element" mat-cell> {{element.purchaseMoney| currency:'USD':'symbol':'1.2-2'}} </td>
+                    <td *matCellDef="let element"
+                        mat-cell> {{element.purchaseMoney| currency:'USD':'symbol':'1.2-2'}} </td>
                 </ng-container>
 
 
-                <!-- Weight Column -->
+                &lt;!&ndash; Weight Column &ndash;&gt;
                 <ng-container matColumnDef="toll">
                     <th *matHeaderCellDef mat-header-cell>Toll</th>
                     <td *matCellDef="let element" mat-cell> {{element.toll| currency:'USD':'symbol':'1.2-2'}} </td>
@@ -100,7 +118,7 @@
                     <th *matHeaderCellDef mat-header-cell>CreatedAt</th>
                     <td *matCellDef="let element" mat-cell> {{element.createdAt| slice:0:10}} </td>
                 </ng-container>
-                <!-- Symbol Column -->
+                &lt;!&ndash; Symbol Column &ndash;&gt;
                 <ng-container matColumnDef="actions">
                     <th *matHeaderCellDef mat-header-cell> Actions</th>
                     <td *matCellDef="let element" mat-cell>
@@ -120,39 +138,7 @@
             </mat-paginator>
         </div>
 
-
     </div>
 
 </div>
-
-
-<!--<div>
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let guest of guests">
-      <td>{{ guest.id }}</td>
-      <td>{{ guest.name }}</td>
-      <td>{{ guest.email }}</td>
-      <td>{{ guest.confirm}}</td>
-      <td>
-        <button [routerLink]="['/detail',guest.id]" >View</button>
-        <button (click)="deleteGuest(guest.id)">Delete</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>-->
-
-
-
-
 

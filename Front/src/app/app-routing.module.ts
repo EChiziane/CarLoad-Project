@@ -16,8 +16,7 @@ import {MaterialComponent} from "./material/material.component";
 import {AddMaterialComponent} from "./material/add-material/add-material.component";
 import {ManagerComponent} from "./manager/manager.component";
 import {AddManagerComponent} from "./manager/add-manager/add-manager.component";
-import {LayoutComponent} from "./layout/layout.component";
-import {CloadComponent} from "./cload/cload.component";
+import {DataPickerComponent} from "./data-picker/data-picker.component";
 
 const routes: Routes = [
     {path: 'detail/:id', component: GuestDetailsComponent},
@@ -36,7 +35,7 @@ const routes: Routes = [
     {path: 'material/create', component: AddMaterialComponent},
     {path: 'manager', component: ManagerComponent},
     {path: 'manager/create', component: AddManagerComponent},
-    {path: '', component:CarLoadComponent}
+    {path: '', component: CarLoadComponent}
 ];
 
 @NgModule({
