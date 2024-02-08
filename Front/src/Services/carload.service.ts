@@ -25,6 +25,18 @@ export class CarloadService {
         return this.http.get<CarLoad>(`${this.baseURL}/${id}`);
     }
 
+    public getCarLoadToday(): Observable<CarLoad[]> {
+        return this.http.get<CarLoad[]>(this.baseURL+"/today");
+    }
+
+    public getCarLoadRange(startDate:Date, endDate:Date): Observable<CarLoad[]> {
+        const params = {
+            startDate: startDate.toISOString(),
+            endDate: endDate.toISOString()
+        };
+        return this.http.get<CarLoad[]>(this.baseURL,{params});
+    }
+
     public addCarLoad(driver: any): Observable<any> {
         return this.http.post<any>(this.baseURL, driver).pipe(take(1))
     }

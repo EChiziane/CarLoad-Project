@@ -33,9 +33,8 @@ namespace Persistence.Migrations
                     b.Property<int>("ClientId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -108,9 +107,8 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -142,9 +140,8 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -183,9 +180,8 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -232,9 +228,8 @@ namespace Persistence.Migrations
                     b.Property<bool>("Confirm")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -270,9 +265,8 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -312,9 +306,8 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");
@@ -350,9 +343,8 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CreatedAt")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedByUserId")
                         .HasColumnType("text");

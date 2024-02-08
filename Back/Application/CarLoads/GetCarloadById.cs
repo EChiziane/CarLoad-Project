@@ -23,6 +23,7 @@ public class GetCarloadById
         public async Task<CarLoad> Handle(GetCarLoadByIdQuery request, CancellationToken cancellationToken)
         {
             var carload = await _unitOfWork.Repository<CarLoad>().GetByIdAsync(request.CarLoadId);
+
             if (carload is null)
                 throw new Exception("No car load found");
             return carload;

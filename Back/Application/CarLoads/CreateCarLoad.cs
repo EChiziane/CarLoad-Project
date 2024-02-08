@@ -68,7 +68,7 @@ public class CreateCarLoad
                            + request.Toll
                            + request.PoliceExpense
             };
-            carload.Expenses += (carload.ManagerExpenses + carload.DriverExpenses);
+            carload.Expenses += carload.ManagerExpenses + carload.DriverExpenses;
             _unitOfWork.Repository<CarLoad>().Add(carload);
             var result = await _unitOfWork.Complete() > 0;
             if (result) return carload;

@@ -50,4 +50,23 @@ export class CarLoadComponent implements OnInit {
         })
     }
 
+
+    public getCarloadToday(): void {
+        this.carloadService.getCarLoadToday().subscribe({
+            next: (carloads: CarLoad[]) => {
+                this.carLoads = carloads;
+                this.dataSource = new MatTableDataSource<CarLoad>(this.carLoads);
+            }
+        })
+    }
+
+    public getCarloadRange(startDate:Date, endDate:Date): void {
+        this.carloadService.getCarLoadRange(startDate,endDate).subscribe({
+            next: (carloads: CarLoad[]) => {
+                this.carLoads = carloads;
+                console.log(carloads)
+                this.dataSource = new MatTableDataSource<CarLoad>(this.carLoads);
+            }
+        })
+    }
 }
