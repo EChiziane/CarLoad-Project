@@ -1,0 +1,14 @@
+<p>data-picker works!</p>
+<br>
+<mat-form-field class="date-range-field" appearance="outline">
+    <mat-label>Enter a date range</mat-label>
+    <div class="date-range-input-container">
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date">
+            <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    </div>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>

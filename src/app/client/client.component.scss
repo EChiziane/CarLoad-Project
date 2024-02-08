@@ -1,0 +1,33 @@
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+.header-page {
+  text-align: center;
+}
+
+.full-width-button {
+  width: 100%;
+  box-sizing: border-box; /* Garante que a largura inclua padding e borda */
+}
+
+table {
+  width: 100%;
+
+  mat-icon {
+    cursor: pointer;
+  }
+}
+
+
+.mat-elevation-z8 {
+  overflow: auto;
+  max-height: 400px; /* Defina a altura máxima desejada */
+}
+

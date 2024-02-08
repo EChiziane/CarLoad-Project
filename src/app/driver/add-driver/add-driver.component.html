@@ -1,0 +1,45 @@
+<div class="mat-add-content">
+    <div class="mat-add-header">
+        <h3>
+            <mat-label>Insert Driver</mat-label>
+        </h3>
+    </div>
+    <form (ngSubmit)="createDriver()" [formGroup]="profileForm">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput placeholder="Ex. Carlos Alberto" value="">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Choose a date</mat-label>
+            <input [matDatepicker]="picker" formControlName="birthDate" matInput>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Phone Number</mat-label>
+            <input formControlName="phoneNumber" matInput placeholder="+258 821231234" value="">
+        </mat-form-field>
+
+        <br>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Vehicle Plate</mat-label>
+            <input formControlName="vehiclePlate" matInput placeholder="ABC 123 NP" value="">
+        </mat-form-field>
+
+        <br>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Vehicle Model</mat-label>
+            <input formControlName="vehicleModel" matInput placeholder="vehicle Model:" value="">
+        </mat-form-field>
+
+        <div class="mat-add-actions">
+            <button color="primary" mat-button type="submit">Save</button>
+            <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
+        </div>
+    </form>
+</div>

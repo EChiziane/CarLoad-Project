@@ -1,0 +1,44 @@
+<!-- driver-details.component.html -->
+
+
+<mat-tab-group>
+    <mat-tab label="Client">
+        <div *ngIf="carload">
+            <h3>Detalhes da Carrada</h3>
+            <p><strong>ID:</strong> {{ carload.id }}</p>
+            <p><strong>Client Name:</strong> {{ carload.clientName }}</p>
+            <p><strong>Destination:</strong> {{ carload.destination }}</p>
+            <p><strong>Manager:</strong> {{ carload.managerName}}</p>
+            <p><strong>Material:</strong> {{ carload.materialName}}</p>
+            <!-- Adicione mais detalhes conforme necessário -->
+            <button [routerLink]="['/carload']">Voltar</button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Local">
+
+        <div *ngIf="carload">
+            <h3>Detalhes da Carrada</h3>
+            <p><strong>ID:</strong> {{ carload.id }}</p>
+            <p><strong>Client Name:</strong> {{ carload.clientName }}</p>
+            <p><strong>Destination:</strong> {{ carload.destination }}</p>
+            <p><strong>Manager:</strong> {{ carload.managerName}}</p>
+            <p><strong>Material:</strong> {{ carload.materialName}}</p>
+            <!-- Adicione mais detalhes conforme necessário -->
+            <button [routerLink]="['/carload']">Voltar</button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Accounts">
+
+        <div *ngIf="carload">
+            <h3>Detalhes da Carrada</h3>
+            <p><strong>ID:</strong> {{ carload.id }}</p>
+            <p><strong>Material:</strong> {{ carload.materialName }}</p>
+            <p><strong>Client Name:</strong> {{ carload.clientName }}</p>
+            <p><strong>Destination:</strong> {{ carload.destination }}</p>
+            <p><strong>Fuel:</strong> {{ carload.fuelExpense }}</p>
+            <p><strong>Manager:</strong> {{ carload.managerName}}</p>
+            <!-- Adicione mais detalhes conforme necessário -->
+            <button [routerLink]="['/carload']">Voltar</button>
+        </div>
+    </mat-tab>
+</mat-tab-group>

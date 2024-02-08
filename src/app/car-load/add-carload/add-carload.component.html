@@ -1,0 +1,87 @@
+<div class="mat-add-content">
+    <div class="mat-add-header">
+        <h3>
+            <mat-label>Insert CarLoad</mat-label>
+        </h3>
+    </div>
+    <form (ngSubmit)="createCarLoad()" [formGroup]="profileForm">
+        <div class="mat-form-display">
+            <div class="mat-add-client">
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Costumer Name</mat-label>
+                    <mat-select formControlName="clientId">
+                        <mat-option *ngFor="let client of clients" [value]="client.id">
+                            {{ client.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Destination</mat-label>
+                    <input formControlName="destination" matInput placeholder="Ex.Cumbeza" value="">
+                </mat-form-field>
+                <br>
+
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Material</mat-label>
+                    <mat-select formControlName="materialId">
+                        <mat-option *ngFor="let material of materials" [value]="material.id">
+                            {{ material.type}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <br>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Earnings</mat-label>
+                    <input formControlName="earnings" matInput placeholder="800 Mt" value="">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Toll</mat-label>
+                    <input formControlName="toll" matInput placeholder="800 Mt" value="">
+                </mat-form-field>
+            </div>
+            <div class="mat-add-earnings">
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>PurchaseMoney</mat-label>
+                    <input formControlName="purchaseMoney" matInput placeholder="800 Mt" value="">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Fuel Expense</mat-label>
+                    <input formControlName="fuelExpense" matInput placeholder="800k" value="">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Police Expense</mat-label>
+                    <input formControlName="policeExpense" matInput placeholder="800k" value="">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Driver Name</mat-label>
+                    <mat-select formControlName="driverId">
+                        <mat-option *ngFor="let driver of drivers" [value]="driver.id">
+                            {{ driver.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Manager</mat-label>
+                    <mat-select formControlName="managerId">
+                        <mat-option *ngFor="let manager of managers" [value]="manager.id">
+                            {{ manager.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+            <div class="mat-add-actions">
+                <button color="primary" mat-button type="submit">Save</button>
+                <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
