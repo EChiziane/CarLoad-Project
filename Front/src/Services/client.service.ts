@@ -21,7 +21,7 @@ export class ClientService {
         return this.http.delete<Client>(`${this.baseURL}/${id}`)
     }
 
-    public addClient(driver: Client): Observable<Client> {
+    public addClient(driver: any): Observable<Client> {
         return this.http.post<Client>(this.baseURL, driver).pipe(take(1))
     }
 

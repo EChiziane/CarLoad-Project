@@ -25,7 +25,7 @@ export class DriverService {
         return this.http.get<Driver>(`${this.baseURL}/${id}`);
     }
 
-    public addDriver(driver: Driver): Observable<Driver> {
+    public addDriver(driver: any): Observable<Driver> {
         return this.http.post<Driver>(this.baseURL, driver).pipe(take(1))
     }
 

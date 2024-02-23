@@ -25,8 +25,8 @@ export class MaterialService {
         return this.http.get<Material>(`${this.baseURL}/${id}`);
     }
 
-    public addMaterial(material: Material): Observable<Material> {
-        return this.http.post<Material>(this.baseURL, material).pipe(take(1));
+    public addMaterial(material: any): Observable<any> {
+        return this.http.post<any>(this.baseURL, material).pipe(take(1));
     }
 
 }

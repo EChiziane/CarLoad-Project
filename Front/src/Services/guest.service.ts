@@ -27,7 +27,7 @@ export class GuestService {
         return this.http.get<Guest>(`${this.baseURL}/${id}`);
     }
 
-    public addGuest(client: Guest): Observable<Guest> {
+    public addGuest(client: any): Observable<Guest> {
         const options = {
             headers: new HttpHeaders().set('Content-Type', 'application/json'),
         };

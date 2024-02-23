@@ -23,8 +23,8 @@ export class AddGuestComponent implements OnInit {
     // Inicializando um objeto Guest com valores do formulário
     guest: Guest = {
         id: 0,
-        name: this.profileForm.controls.name.value,
-        email: this.profileForm.value.email,
+        name: this.profileForm.controls.name.value!,
+        email: this.profileForm.value.email!,
         confirm: true
     };
 

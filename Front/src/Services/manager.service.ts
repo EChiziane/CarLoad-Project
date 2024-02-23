@@ -28,7 +28,7 @@ export class ManagerService {
         return this.http.get<Manager>(`${this.baseURL}/${id}`);
     }
 
-    public addManager(material: Manager): Observable<Manager> {
+    public addManager(material: any): Observable<Manager> {
         const options = {
             headers: new HttpHeaders().set('Content-Type', 'application/json'),
         };
