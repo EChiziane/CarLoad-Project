@@ -63,12 +63,9 @@ public class CreateCarLoad
                 Earnings = request.Earnings,
                 ManagerExpenses = 150,
                 DriverExpenses = 300,
-                Expenses = request.PurchaseMoney
-                           + request.FuelExpense
-                           + request.Toll
-                           + request.PoliceExpense
+               
             };
-            carload.Expenses += carload.ManagerExpenses + carload.DriverExpenses;
+       
             _unitOfWork.Repository<CarLoad>().Add(carload);
             var result = await _unitOfWork.Complete() > 0;
             if (result) return carload;

@@ -21,7 +21,6 @@ public class MappingProfiles : Profile
             .ForMember(dest => dest.ClientName, opt => opt.MapFrom(src => src.Client.Name))
             .ForMember(dest => dest.ManagerName, opt => opt.MapFrom(src => src.Manager.Name))
             .ForMember(dest => dest.DriverName, opt => opt.MapFrom(src => src.Driver.Name))
-            .ForMember(dest => dest.MaterialName, opt => opt.MapFrom(src => src.Material.Type))
-            .ForMember(dest => dest.Expenses, opt => opt.MapFrom(src => src.Expenses));
+            .ForMember(dest => dest.MaterialName, opt => opt.MapFrom(src => src.Material.Type));
     }
 }
