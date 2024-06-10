@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\API\\API.csproj": {}
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\API\\API.csproj": {
+    "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\API\\API.csproj",
+        "projectUniqueName": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\API\\API.csproj",
+        "projectPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\API.csproj",
         "packagesPath": "C:\\Users\\Chiziane\\.nuget\\packages\\",
-        "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\API\\obj\\",
+        "outputPath": "D:\\Docs\\Code World\\Code\\CarLoad_Project\\Back\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chiziane\\AppData\\Roaming\\NuGet\\NuGet.Config"

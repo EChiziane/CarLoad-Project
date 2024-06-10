@@ -6,7 +6,6 @@
 
 }
 
-
 .header-page {
   width: 100%;
   height: 10%;
@@ -14,43 +13,43 @@
   background: rgba(246, 205, 36, 0.74);
 }
 
-.mat-button-season {
-  height: 10%;
+.mat-section-actions {
   width: 100%;
-  background: #e3dddd;
+  height: 10%;
+  display: flex; /* Torna o contêiner flexível */
+  min-width: 0;
+}
 
-  mat-form-field{
-    width: 300px;
-  }
+.mat-section-action {
+  flex: 1; /* Distribui o espaço disponível igualmente entre as subdivisões */
+  /* Adicione outros estilos conforme necessário */
+  width: calc(10% - 20px); /* Define a largura de cada subdivisão (10% da largura total - 20px de separação) */
+  margin-right: 10px; /* Adiciona uma margem direita de 10px entre as subdivisões */
+
 
   button {
-    width: 20%;
+    top: 10%;
+    width: 100%;
     margin-right: 2px;
-    top: 20%;
     font-size: 12px;
+    height: 80%;
   }
 
   .date-range-field {
-    margin-right: 1%;
-    margin-left: 1%;
-  }
+    width: 100%;
+    margin-right: 2px;
+    font-size: 12px;
+    height: 100%;
+    margin-left: 2px;
 
-  .date-range-input-container {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Ajuste a largura conforme necessário */
-  .mat-form-field {
-    width: 20%;
-    top: 25%;
-    .date-range-input-container{
-      height: 2px;
+    .date-range-input-container {
+      height: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
     }
+
   }
-
-
-
 }
 
 .mat-main-content {
@@ -58,38 +57,43 @@
   width: 100%;
   height: 70%;
   box-sizing: border-box; /* Garante que a largura inclua padding e borda */
+
+  table {
+    width: 100%;
+
+    td {
+      font-size: 12px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      color: black;
+      background-color: #fff; /* Cor de fundo desejada */
+      z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo da tabela */
+    }
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+
   button {
     width: 15%;
     margin-right: 2px;
     margin-left: 80%;
     top: 68%;
+    height: 80%;
 
     mat-icon {
       width: 30%;
     }
   }
 
-}
-
-
-table {
-  width: 100%;
-
-  td {
-    font-size: 12px;
+  .date-range-field {
+    background: green;
   }
 
-  th {
-    position: sticky;
-    top: 0;
-    color: black;
-    background-color: #fff; /* Cor de fundo desejada */
-    z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo da tabela */
-  }
-
-  mat-icon {
-    cursor: pointer;
-  }
 }
 
 .mat-table-content {

@@ -3,23 +3,23 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {CarloadDetailsComponent} from './carload-details.component';
 
 describe('CarloadDetailsComponent', () => {
-    let component: CarloadDetailsComponent;
-    let fixture: ComponentFixture<CarloadDetailsComponent>;
+  let component: CarloadDetailsComponent;
+  let fixture: ComponentFixture<CarloadDetailsComponent>;
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            declarations: [CarloadDetailsComponent]
-        })
-            .compileComponents();
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [CarloadDetailsComponent]
+    })
+      .compileComponents();
+  });
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(CarloadDetailsComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CarloadDetailsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

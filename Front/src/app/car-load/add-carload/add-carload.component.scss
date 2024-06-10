@@ -1,3 +1,27 @@
+.header-page {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  background: rgba(246, 205, 36, 0.74);
+}
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between; /* Isso distribuirá o espaço entre as divs */
+
+}
+
+
+.mat-main-content {
+  background: gray;
+  width: 100%;
+  height: 80%;
+  box-sizing: border-box; /* Garante que a largura inclua padding e borda */
+
+}
+
 .mat-add-content {
   position: absolute;
   top: 50%;
