@@ -5,33 +5,33 @@ import {Observable} from "rxjs";
 import {take} from "rxjs/operators";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class GuestService {
 
 
-    baseURL = 'https://localhost:7156/api/Guest';
+  baseURL = 'https://localhost:7156/api/Guest';
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) {
+  }
 
-    public getGuest(): Observable<Guest[]> {
-        return this.http.get<Guest[]>(this.baseURL);
-    }
+  public getGuest(): Observable<Guest[]> {
+    return this.http.get<Guest[]>(this.baseURL);
+  }
 
-    public deleteGuest(id: number): Observable<Guest> {
-        return this.http.delete<Guest>(`${this.baseURL}/${id}`);
-    }
+  public deleteGuest(id: number): Observable<Guest> {
+    return this.http.delete<Guest>(`${this.baseURL}/${id}`);
+  }
 
-    public getGuestById(id: number): Observable<Guest> {
-        return this.http.get<Guest>(`${this.baseURL}/${id}`);
-    }
+  public getGuestById(id: number): Observable<Guest> {
+    return this.http.get<Guest>(`${this.baseURL}/${id}`);
+  }
 
-    public addGuest(client: any): Observable<Guest> {
-        const options = {
-            headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        };
-        return this.http.post<Guest>(this.baseURL, client, options).pipe(take(1));
-    }
+  public addGuest(client: any): Observable<Guest> {
+    const options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    };
+    return this.http.post<Guest>(this.baseURL, client, options).pipe(take(1));
+  }
 
 }

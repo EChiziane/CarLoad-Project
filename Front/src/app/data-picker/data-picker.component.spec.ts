@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DataPickerComponent } from './data-picker.component';
+import {DataPickerComponent} from './data-picker.component';
 
 describe('DataPickerComponent', () => {
   let component: DataPickerComponent;
@@ -8,9 +8,9 @@ describe('DataPickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataPickerComponent ]
+      declarations: [DataPickerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

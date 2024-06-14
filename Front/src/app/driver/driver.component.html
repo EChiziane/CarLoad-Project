@@ -1,13 +1,13 @@
 <!-- guest-list.component.html -->
 <div class="header-page">
-    <label><h2>Lista de Drivers</h2></label>
+  <label><h2>Lista de Drivers</h2></label>
 </div>
 
 <div>
-    <button
-            [routerLink]="['/driver/create']" class="full-width-button"
-            color="primary" mat-raised-button>Adicionar
-    </button>
+  <button
+    [routerLink]="['/driver/create']" class="full-width-button"
+    color="primary" mat-raised-button>Adicionar
+  </button>
 </div>
 
 
@@ -38,63 +38,63 @@
 </div>-->
 
 <div class="mat-elevation-z8">
-    <table [dataSource]="dataSource" mat-table>
+  <table [dataSource]="dataSource" mat-table>
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="id">
-            <th *matHeaderCellDef mat-header-cell> No.</th>
-            <td *matCellDef="let element" mat-cell> {{element.id}} </td>
-        </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell> No.</th>
+      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+    </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <th *matHeaderCellDef mat-header-cell> Name</th>
-            <td *matCellDef="let element" mat-cell> {{element.name}} </td>
-        </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell> Name</th>
+      <td *matCellDef="let element" mat-cell> {{element.name}} </td>
+    </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="birth">
-            <th *matHeaderCellDef mat-header-cell> Email</th>
-            <td *matCellDef="let element" mat-cell> {{element.birthDate}} </td>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="birth">
+      <th *matHeaderCellDef mat-header-cell> Email</th>
+      <td *matCellDef="let element" mat-cell> {{element.birthDate}} </td>
 
-        </ng-container>
+    </ng-container>
 
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="phoneNumber">
-            <th *matHeaderCellDef mat-header-cell> Phone Number</th>
-            <td *matCellDef="let element" mat-cell> {{element.phoneNumber}} </td>
-        </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="phoneNumber">
+      <th *matHeaderCellDef mat-header-cell> Phone Number</th>
+      <td *matCellDef="let element" mat-cell> {{element.phoneNumber}} </td>
+    </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="vehicleModel">
-            <th *matHeaderCellDef mat-header-cell> Vehicle Model</th>
-            <td *matCellDef="let element" mat-cell> {{element.vehicleModel}} </td>
-        </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="vehicleModel">
+      <th *matHeaderCellDef mat-header-cell> Vehicle Model</th>
+      <td *matCellDef="let element" mat-cell> {{element.vehicleModel}} </td>
+    </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="vehiclePlate">
-            <th *matHeaderCellDef mat-header-cell> Vehicle Plate</th>
-            <td *matCellDef="let element" mat-cell> {{element.vehiclePlate}} </td>
-        </ng-container>
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="actions">
-            <th *matHeaderCellDef mat-header-cell> Actions</th>
-            <td *matCellDef="let element" mat-cell>
-                <mat-icon [routerLink]="['detail',element.id]">visibility</mat-icon>
-                <mat-icon>edit</mat-icon>
-                <mat-icon (click)="deleteDriver(element.id)">delete</mat-icon>
-            </td>
-        </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="vehiclePlate">
+      <th *matHeaderCellDef mat-header-cell> Vehicle Plate</th>
+      <td *matCellDef="let element" mat-cell> {{element.vehiclePlate}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> Actions</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-icon [routerLink]="['detail',element.id]">visibility</mat-icon>
+        <mat-icon>edit</mat-icon>
+        <mat-icon (click)="deleteDriver(element.id)">delete</mat-icon>
+      </td>
+    </ng-container>
 
-        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-    </table>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   aria-label="Select page of periodic elements"
-                   showFirstLastButtons>
-    </mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 aria-label="Select page of periodic elements"
+                 showFirstLastButtons>
+  </mat-paginator>
 </div>
 
 

@@ -52,9 +52,6 @@ namespace Persistence.Migrations
                     b.Property<decimal>("Earnings")
                         .HasColumnType("numeric");
 
-                    b.Property<decimal>("Expenses")
-                        .HasColumnType("numeric");
-
                     b.Property<decimal>("FuelExpense")
                         .HasColumnType("numeric");
 
@@ -79,6 +76,9 @@ namespace Persistence.Migrations
                     b.Property<decimal>("PurchaseMoney")
                         .HasColumnType("numeric");
 
+                    b.Property<int>("SprintId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("Toll")
                         .HasColumnType("numeric");
 
@@ -95,6 +95,8 @@ namespace Persistence.Migrations
                     b.HasIndex("ManagerId");
 
                     b.HasIndex("MaterialId");
+
+                    b.HasIndex("SprintId");
 
                     b.ToTable("CarLoads");
                 });
@@ -329,6 +331,44 @@ namespace Persistence.Migrations
                     b.HasIndex("LastUpdatedByUserId");
 
                     b.ToTable("Materials");
+                });
+
+            modelBuilder.Entity("Domain.Sprint", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("LastUpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("LastUpdatedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("DriverId");
+
+                    b.HasIndex("LastUpdatedByUserId");
+
+                    b.ToTable("Sprints");
                 });
 
             modelBuilder.Entity("Domain.SystemLanguage", b =>
@@ -622,6 +662,12 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Sprint", "Sprint")
+                        .WithMany()
+                        .HasForeignKey("SprintId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Client");
 
                     b.Navigation("CreatedByUser");
@@ -633,6 +679,8 @@ namespace Persistence.Migrations
                     b.Navigation("Manager");
 
                     b.Navigation("Material");
+
+                    b.Navigation("Sprint");
                 });
 
             modelBuilder.Entity("Domain.Category", b =>
@@ -721,6 +769,29 @@ namespace Persistence.Migrations
                         .HasForeignKey("LastUpdatedByUserId");
 
                     b.Navigation("CreatedByUser");
+
+                    b.Navigation("LastUpdatedByUser");
+                });
+
+            modelBuilder.Entity("Domain.Sprint", b =>
+                {
+                    b.HasOne("Domain.ApplicationUser", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId");
+
+                    b.HasOne("Domain.Driver", "Driver")
+                        .WithMany()
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.ApplicationUser", "LastUpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("LastUpdatedByUserId");
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("Driver");
 
                     b.Navigation("LastUpdatedByUser");
                 });

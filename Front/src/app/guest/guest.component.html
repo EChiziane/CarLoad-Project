@@ -1,13 +1,13 @@
 <!-- guest-list.component.html -->
 <div class="header-page">
-    <label><h2>Lista de Convidados</h2></label>
+  <label><h2>Lista de Convidados</h2></label>
 </div>
 
 <div>
-    <button
-            [routerLink]="['/create']" class="full-width-button"
-            color="primary" mat-raised-button>Adicionar
-    </button>
+  <button
+    [routerLink]="['/create']" class="full-width-button"
+    color="primary" mat-raised-button>Adicionar
+  </button>
 </div>
 
 
@@ -38,48 +38,48 @@
 </div>-->
 
 <div class="mat-elevation-z8">
-    <table [dataSource]="dataSource" mat-table>
+  <table [dataSource]="dataSource" mat-table>
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="id">
-            <th *matHeaderCellDef mat-header-cell> No.</th>
-            <td *matCellDef="let element" mat-cell> {{element.id}} </td>
-        </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell> No.</th>
+      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+    </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <th *matHeaderCellDef mat-header-cell> Name</th>
-            <td *matCellDef="let element" mat-cell> {{element.name}} </td>
-        </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell> Name</th>
+      <td *matCellDef="let element" mat-cell> {{element.name}} </td>
+    </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="email">
-            <th *matHeaderCellDef mat-header-cell> Email</th>
-            <td *matCellDef="let element" mat-cell> {{element.email}} </td>
-        </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="email">
+      <th *matHeaderCellDef mat-header-cell> Email</th>
+      <td *matCellDef="let element" mat-cell> {{element.email}} </td>
+    </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="confirm">
-            <th *matHeaderCellDef mat-header-cell> Status</th>
-            <td *matCellDef="let element" mat-cell> {{element.confirm}} </td>
-        </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="confirm">
+      <th *matHeaderCellDef mat-header-cell> Status</th>
+      <td *matCellDef="let element" mat-cell> {{element.confirm}} </td>
+    </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="actions">
-            <th *matHeaderCellDef mat-header-cell> Actions</th>
-            <td *matCellDef="let element" mat-cell>
-                <mat-icon [routerLink]="['/detail',element.id]">visibility</mat-icon>
-                <mat-icon>edit</mat-icon>
-                <mat-icon (click)="deleteGuest(element.id)">delete</mat-icon>
-            </td>
-        </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> Actions</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-icon [routerLink]="['/detail',element.id]">visibility</mat-icon>
+        <mat-icon>edit</mat-icon>
+        <mat-icon (click)="deleteGuest(element.id)">delete</mat-icon>
+      </td>
+    </ng-container>
 
-        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-    </table>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   aria-label="Select page of periodic elements"
-                   showFirstLastButtons>
-    </mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 aria-label="Select page of periodic elements"
+                 showFirstLastButtons>
+  </mat-paginator>
 </div>

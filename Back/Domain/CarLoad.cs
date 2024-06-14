@@ -12,14 +12,9 @@ public class CarLoad : BaseEntity
     public decimal DriverExpenses { get; set; }
     public decimal ManagerExpenses { get; set; }
     public decimal PurchaseMoney { get; set; }
-        
-    public decimal TotalExpenses 
-    { 
-        get
-        {
-            return FuelExpense + PoliceExpense + Toll + DriverExpenses + ManagerExpenses + PurchaseMoney;
-        }
-    }
+
+    public decimal TotalExpenses =>
+        FuelExpense + PoliceExpense + Toll + DriverExpenses + ManagerExpenses + PurchaseMoney;
 
     public int DriverId { get; set; }
 
@@ -36,4 +31,8 @@ public class CarLoad : BaseEntity
     public int MaterialId { get; set; }
 
     [ForeignKey("MaterialId")] public Material Material { get; set; }
+
+    public int SprintId { get; set; }
+
+    [ForeignKey("SprintId")] public Sprint Sprint { get; set; }
 }

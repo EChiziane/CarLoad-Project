@@ -22,7 +22,7 @@ public class CarloadController : BaseApiController
     {
         return Ok(await _mediator.Send(new ListCarload.ListCarloadQuery()));
     }
-    
+
     [HttpGet("today")]
     [Authorize]
     [AllowAnonymous]
@@ -34,7 +34,7 @@ public class CarloadController : BaseApiController
     [HttpGet("Range")]
     [Authorize]
     [AllowAnonymous]
-    public async Task<ActionResult<List<CarLoadDto>>> CarLoadsRange(DateTime startDate,DateTime endDate)
+    public async Task<ActionResult<List<CarLoadDto>>> CarLoadsRange(DateTime startDate, DateTime endDate)
     {
         return Ok(await _mediator.Send(new GetCarLoadRange.GetCarLoadRangeQuery
             { StartDate = startDate, EndDate = endDate }));

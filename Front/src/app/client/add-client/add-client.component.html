@@ -1,24 +1,24 @@
 <div class="mat-add-content">
-    <div class="mat-add-header">
-        <h3>
-            <mat-label>Insert Client</mat-label>
-        </h3>
-    </div>
-    <form (ngSubmit)="createClient()" [formGroup]="profileForm">
-        <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Name</mat-label>
-            <input formControlName="name" matInput placeholder="Ex. Carlos Alberto" value="">
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Phone Number</mat-label>
-            <input formControlName="phoneNumber" matInput placeholder="+258 821231234" value="">
-        </mat-form-field>
-        <br>
+  <div class="mat-add-header">
+    <h3>
+      <mat-label>Insert Client</mat-label>
+    </h3>
+  </div>
+  <form (ngSubmit)="createClient()" [formGroup]="profileForm">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Ex. Carlos Alberto" value="">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Phone Number</mat-label>
+      <input formControlName="phoneNumber" matInput placeholder="+258 821231234" value="">
+    </mat-form-field>
+    <br>
 
-        <div class="mat-add-actions">
-            <button color="primary" mat-button type="submit">Save</button>
-            <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
-        </div>
-    </form>
+    <div class="mat-add-actions">
+      <button color="primary" mat-button type="submit">Save</button>
+      <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
+    </div>
+  </form>
 </div>

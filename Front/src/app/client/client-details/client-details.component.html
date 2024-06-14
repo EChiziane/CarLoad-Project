@@ -1,10 +1,10 @@
 <!-- client-details.component.html -->
 <div *ngIf="client">
-    <h3>Detalhes do Convidado</h3>
-    <p><strong>ID:</strong> {{ client.id }}</p>
-    <p><strong>Nome:</strong> {{ client.name }}</p>
-    <p><strong>Status:</strong> {{ client.phoneNumber }}</p>
+  <h3>Detalhes do Convidado</h3>
+  <p><strong>ID:</strong> {{ client.id }}</p>
+  <p><strong>Nome:</strong> {{ client.name }}</p>
+  <p><strong>Status:</strong> {{ client.phoneNumber }}</p>
 
-    <!-- Adicione mais detalhes conforme necessário -->
-    <button [routerLink]="['/client']">Voltar</button>
+  <!-- Adicione mais detalhes conforme necessário -->
+  <button [routerLink]="['/client']">Voltar</button>
 </div>

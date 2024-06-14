@@ -22,5 +22,9 @@ public class MappingProfiles : Profile
             .ForMember(dest => dest.ManagerName, opt => opt.MapFrom(src => src.Manager.Name))
             .ForMember(dest => dest.DriverName, opt => opt.MapFrom(src => src.Driver.Name))
             .ForMember(dest => dest.MaterialName, opt => opt.MapFrom(src => src.Material.Type));
+        CreateMap<Sprint, SprintDto>()
+            .ForMember(dest => dest.DriverName, opt => opt.MapFrom(src => src.Driver.Name))
+            .ForMember(dest => dest.CreatedBy, opt => opt.MapFrom(src => src.CreatedByUser.FullName))
+            .ForMember(dest => dest.LastUpdatedBy, opt => opt.MapFrom(src => src.LastUpdatedByUser.FullName));
     }
 }

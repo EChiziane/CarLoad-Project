@@ -11,6 +11,7 @@ public class DataContext : IdentityDbContext
     }
 
     public DbSet<Guest> Guests { get; set; }
+    public DbSet<Sprint> Sprints { get; set; }
     public DbSet<CarLoad> CarLoads { get; set; }
     public DbSet<Driver> Drivers { get; set; }
     public DbSet<Material> Materials { get; set; }

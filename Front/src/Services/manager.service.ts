@@ -6,33 +6,33 @@ import {Manager} from "../Model/manager";
 
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ManagerService {
 
 
-    baseURL = 'https://localhost:7156/api/Manager';
+  baseURL = 'https://localhost:7156/api/Manager';
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) {
+  }
 
-    public getManagers(): Observable<Manager[]> {
-        return this.http.get<Manager[]>(this.baseURL);
-    }
+  public getManagers(): Observable<Manager[]> {
+    return this.http.get<Manager[]>(this.baseURL);
+  }
 
-    public deleteManager(id: number): Observable<Manager> {
-        return this.http.delete<Manager>(`${this.baseURL}/${id}`);
-    }
+  public deleteManager(id: number): Observable<Manager> {
+    return this.http.delete<Manager>(`${this.baseURL}/${id}`);
+  }
 
-    public getManagerById(id: number): Observable<Manager> {
-        return this.http.get<Manager>(`${this.baseURL}/${id}`);
-    }
+  public getManagerById(id: number): Observable<Manager> {
+    return this.http.get<Manager>(`${this.baseURL}/${id}`);
+  }
 
-    public addManager(material: any): Observable<Manager> {
-        const options = {
-            headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        };
-        return this.http.post<Manager>(this.baseURL, material, options).pipe(take(1));
-    }
+  public addManager(material: any): Observable<Manager> {
+    const options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    };
+    return this.http.post<Manager>(this.baseURL, material, options).pipe(take(1));
+  }
 
 }

@@ -1,17 +1,17 @@
 <mat-drawer-container autosize class="example-container">
-    <mat-drawer #drawer class="example-sidenav" mode="side" opened>
-        <p>Auto-resizing sidenav</p>
-        <app-side-nav></app-side-nav>
-        <button (click)="drawer.toggle()" mat-button type="button">
-            Toggle sidenav
-        </button>
-    </mat-drawer>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <p>Auto-resizing sidenav</p>
+    <app-side-nav></app-side-nav>
+    <button (click)="drawer.toggle()" mat-button type="button">
+      Toggle sidenav
+    </button>
+  </mat-drawer>
 
-    <div class="example-sidenav-content">
-        <div class="content">
-            <router-outlet></router-outlet>
-        </div>
-
+  <div class="example-sidenav-content">
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
+
+  </div>
 
 </mat-drawer-container>

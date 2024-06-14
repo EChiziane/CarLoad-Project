@@ -3,11 +3,10 @@ using Domain;
 
 namespace Application.CarLoads;
 
-public class GetCarLoadTodaySpecification:BaseSpecification<CarLoad>
+public class GetCarLoadTodaySpecification : BaseSpecification<CarLoad>
 {
     public GetCarLoadTodaySpecification()
-        :base(car=>car.CreatedAt.Date==DateTime.Today.Date)
+        : base(car => car.CreatedAt.Date == DateTime.Today.Date)
     {
-
     }
 }

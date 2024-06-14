@@ -5,27 +5,27 @@ import {Client} from "../Model/client";
 import {take} from "rxjs/operators";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ClientService {
-    baseURL = 'https://localhost:7156/api/Client';
+  baseURL = 'https://localhost:7156/api/Client';
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) {
+  }
 
-    public getClient(): Observable<Client[]> {
-        return this.http.get<Client[]>(this.baseURL)
-    }
+  public getClient(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.baseURL)
+  }
 
-    public deleteClient(id: number): Observable<Client> {
-        return this.http.delete<Client>(`${this.baseURL}/${id}`)
-    }
+  public deleteClient(id: number): Observable<Client> {
+    return this.http.delete<Client>(`${this.baseURL}/${id}`)
+  }
 
-    public addClient(driver: any): Observable<Client> {
-        return this.http.post<Client>(this.baseURL, driver).pipe(take(1))
-    }
+  public addClient(driver: any): Observable<Client> {
+    return this.http.post<Client>(this.baseURL, driver).pipe(take(1))
+  }
 
-    public getClientById(id: number): Observable<Client> {
-        return this.http.get<Client>(`${this.baseURL}/${id}`);
-    }
+  public getClientById(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.baseURL}/${id}`);
+  }
 }

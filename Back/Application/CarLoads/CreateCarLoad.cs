@@ -16,6 +16,7 @@ public class CreateCarLoad
         public int DriverId { get; set; }
         public int ManagerId { get; set; }
         public int ClientId { get; set; }
+        public int SprintId { get; set; }
         public int MaterialId { get; set; }
         public decimal Toll { get; set; }
         public int PurchaseMoney { get; set; }
@@ -34,6 +35,7 @@ public class CreateCarLoad
             RuleFor(x => x.ClientId).NotEmpty().NotNull();
             RuleFor(x => x.MaterialId).NotEmpty().NotNull();
             RuleFor(x => x.Toll).NotEmpty().NotNull();
+            RuleFor(x => x.SprintId).NotEmpty().NotNull();
             RuleFor(x => x.PurchaseMoney).NotEmpty().NotNull();
         }
     }
@@ -61,11 +63,11 @@ public class CreateCarLoad
                 ManagerId = request.ManagerId,
                 ClientId = request.ClientId,
                 Earnings = request.Earnings,
+                SprintId = request.SprintId,
                 ManagerExpenses = 150,
-                DriverExpenses = 300,
-               
+                DriverExpenses = 300
             };
-       
+
             _unitOfWork.Repository<CarLoad>().Add(carload);
             var result = await _unitOfWork.Complete() > 0;
             if (result) return carload;
