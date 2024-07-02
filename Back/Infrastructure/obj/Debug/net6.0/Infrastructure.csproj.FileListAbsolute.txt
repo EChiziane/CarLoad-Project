@@ -113,3 +113,26 @@ D:\Docs\Code World\Code\CarLoad_Project\Back\Infrastructure\obj\Debug\net6.0\Inf
 D:\Docs\Code World\Code\CarLoad_Project\Back\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
 D:\Docs\Code World\Code\CarLoad_Project\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 D:\Docs\Code World\Code\CarLoad_Project\Back\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Application.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Domain.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Persistence.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Utility.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Application.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Persistence.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Domain.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\Utility.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\en-US\Application.resources.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\bin\Debug\net6.0\pt-PT\Application.resources.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll

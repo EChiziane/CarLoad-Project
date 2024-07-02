@@ -26,11 +26,11 @@ export class AddManagerComponent implements OnInit {
 
   public createManager(): void {
     this.managerService.addManager(this.profileForm.value).subscribe(() => {
-      this.router.navigate([''])
+      this.router.navigate(['/manager'])
     })
   }
 
   public cancelOperation(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/manager']);
   }
 }

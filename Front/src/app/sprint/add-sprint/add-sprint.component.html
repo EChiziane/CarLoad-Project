@@ -1,0 +1,34 @@
+<div class="main-content-component">
+  <div class="mat-add-header">
+    <h3>
+      <mat-label><h2>Insert Sprint</h2></mat-label>
+    </h3>
+  </div>
+  <br>
+  <div class="mat-add-content">
+    <form (ngSubmit)="createSprint()" [formGroup]="sprintForm">
+      <br>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput placeholder="Ex. Carlos Alberto" value="">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Driver Name</mat-label>
+        <mat-select formControlName="driverId">
+          <mat-option *ngFor="let driver of drivers" [value]="driver.id">
+            {{ driver.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <div class="button-group">
+        <button (click)="cancelOperation()" mat-raised-button type="button">Cancel</button>
+        <button color="primary" mat-raised-button type="submit">Add Sprint</button>
+      </div>
+
+    </form>
+  </div>
+</div>

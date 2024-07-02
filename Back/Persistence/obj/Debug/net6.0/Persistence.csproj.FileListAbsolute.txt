@@ -83,3 +83,20 @@ D:\Docs\Code World\Code\CarLoad_Project\Back\Persistence\obj\Debug\net6.0\Persis
 D:\Docs\Code World\Code\CarLoad_Project\Back\Persistence\obj\Debug\net6.0\refint\Persistence.dll
 D:\Docs\Code World\Code\CarLoad_Project\Back\Persistence\obj\Debug\net6.0\Persistence.pdb
 D:\Docs\Code World\Code\CarLoad_Project\Back\Persistence\obj\Debug\net6.0\ref\Persistence.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Persistence.deps.json
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Persistence.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Persistence.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Domain.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Utility.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Domain.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\bin\Debug\net6.0\Utility.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.csproj.CopyComplete
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\refint\Persistence.dll
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\Persistence.pdb
+C:\Users\ROOT\RiderProjects\CarLoad-Project-master\Back\Persistence\obj\Debug\net6.0\ref\Persistence.dll

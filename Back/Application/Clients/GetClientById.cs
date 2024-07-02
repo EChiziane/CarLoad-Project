@@ -27,10 +27,7 @@ public class GetClientById
                 throw new Exception("No Client Found");
             _unitOfWork.Repository<Client>().GetByIdAsync(request.ClientId);
 
-            var result = await _unitOfWork.Complete() > 0;
-            if (result) return client;
-
-            throw new Exception("Problem Finding");
+            return client;
         }
     }
 }

@@ -5,4 +5,6 @@ export interface Driver {
   phoneNumber: string;
   vehiclePlate: string;
   vehicleModel: string;
+  createdBy: string;
+  createdAt: string;
 }

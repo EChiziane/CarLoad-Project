@@ -1,84 +1,48 @@
-<div class="main-content-component">
+<div class="client-list-component">
+  <div class="header-page">
+    <h2>Lista de Clientes</h2>
+  </div>
 
+  <div class="button-container">
+    <button [routerLink]="['/client/create']" class="full-width-button" color="primary" mat-raised-button>
+      Adicionar
+    </button>
+  </div>
 
+  <div class="table-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+      </ng-container>
+
+      <!-- Phone Number Column -->
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef> Telefone </th>
+        <td mat-cell *matCellDef="let element"> {{ element.phoneNumber }} </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon [routerLink]="['detail', element.id]">visibility</mat-icon>
+          <mat-icon >edit</mat-icon>
+          <mat-icon (click)="deleteClient(element.id)">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of clients"></mat-paginator>
+  </div>
 </div>
-
-
-<div class="header-page">
-  <label><h2>Lista de Clients</h2></label>
-</div>
-
-<div>
-  <button
-    [routerLink]="['/client/create']" class="full-width-button"
-    color="primary" mat-raised-button>Adicionar
-  </button>
-</div>
-<!--<div>
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let guest of guests">
-      <td>{{ guest.id }}</td>
-      <td>{{ guest.name }}</td>
-      <td>{{ guest.email }}</td>
-      <td>{{ guest.confirm}}</td>
-      <td>
-        <button [routerLink]="['/detail',guest.id]" >View</button>
-        <button (click)="deleteGuest(guest.id)">Delete</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>-->
-<div class="mat-elevation-z8">
-  <table [dataSource]="dataSource" mat-table>
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell> No.</th>
-      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th *matHeaderCellDef mat-header-cell> Name</th>
-      <td *matCellDef="let element" mat-cell> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="phoneNumber">
-      <th *matHeaderCellDef mat-header-cell> Phone Number</th>
-      <td *matCellDef="let element" mat-cell> {{element.phoneNumber}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="actions">
-      <th *matHeaderCellDef mat-header-cell> Actions</th>
-      <td *matCellDef="let element" mat-cell>
-        <mat-icon [routerLink]="['detail',element.id]">visibility</mat-icon>
-        <mat-icon>edit</mat-icon>
-        <mat-icon>delete</mat-icon>
-      </td>
-    </ng-container>
-
-    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                 aria-label="Select page of periodic elements"
-                 showFirstLastButtons>
-  </mat-paginator>
-</div>
-
-
-

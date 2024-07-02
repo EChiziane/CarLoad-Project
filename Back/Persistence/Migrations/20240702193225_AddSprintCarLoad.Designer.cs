@@ -12,8 +12,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240201112055_AddMaterialManagerDto5")]
-    partial class AddMaterialManagerDto5
+    [Migration("20240702193225_AddSprintCarLoad")]
+    partial class AddSprintCarLoad
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,8 +32,13 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ClientId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Client")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ClientNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -52,9 +57,6 @@ namespace Persistence.Migrations
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Earnings")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("Expenses")
                         .HasColumnType("numeric");
 
                     b.Property<decimal>("FuelExpense")
@@ -81,12 +83,13 @@ namespace Persistence.Migrations
                     b.Property<decimal>("PurchaseMoney")
                         .HasColumnType("numeric");
 
+                    b.Property<int>("SprintId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("Toll")
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
 
                     b.HasIndex("CreatedByUserId");
 
@@ -97,6 +100,8 @@ namespace Persistence.Migrations
                     b.HasIndex("ManagerId");
 
                     b.HasIndex("MaterialId");
+
+                    b.HasIndex("SprintId");
 
                     b.ToTable("CarLoads");
                 });
@@ -331,6 +336,44 @@ namespace Persistence.Migrations
                     b.HasIndex("LastUpdatedByUserId");
 
                     b.ToTable("Materials");
+                });
+
+            modelBuilder.Entity("Domain.Sprint", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("LastUpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("LastUpdatedByUserId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("DriverId");
+
+                    b.HasIndex("LastUpdatedByUserId");
+
+                    b.ToTable("Sprints");
                 });
 
             modelBuilder.Entity("Domain.SystemLanguage", b =>
@@ -592,12 +635,6 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.CarLoad", b =>
                 {
-                    b.HasOne("Domain.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.ApplicationUser", "CreatedByUser")
                         .WithMany()
                         .HasForeignKey("CreatedByUserId");
@@ -624,7 +661,11 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Client");
+                    b.HasOne("Domain.Sprint", "Sprint")
+                        .WithMany("CarLoads")
+                        .HasForeignKey("SprintId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CreatedByUser");
 
@@ -635,6 +676,8 @@ namespace Persistence.Migrations
                     b.Navigation("Manager");
 
                     b.Navigation("Material");
+
+                    b.Navigation("Sprint");
                 });
 
             modelBuilder.Entity("Domain.Category", b =>
@@ -727,6 +770,29 @@ namespace Persistence.Migrations
                     b.Navigation("LastUpdatedByUser");
                 });
 
+            modelBuilder.Entity("Domain.Sprint", b =>
+                {
+                    b.HasOne("Domain.ApplicationUser", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId");
+
+                    b.HasOne("Domain.Driver", "Driver")
+                        .WithMany()
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.ApplicationUser", "LastUpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("LastUpdatedByUserId");
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("Driver");
+
+                    b.Navigation("LastUpdatedByUser");
+                });
+
             modelBuilder.Entity("Domain.SystemLanguage", b =>
                 {
                     b.HasOne("Domain.ApplicationUser", "CreatedByUser")
@@ -791,6 +857,11 @@ namespace Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Sprint", b =>
+                {
+                    b.Navigation("CarLoads");
                 });
 #pragma warning restore 612, 618
         }

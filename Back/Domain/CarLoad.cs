@@ -24,9 +24,8 @@ public class CarLoad : BaseEntity
 
     [ForeignKey("ManagerId")] public Manager Manager { get; set; }
 
-    public int ClientId { get; set; }
-
-    [ForeignKey("ClientId")] public Client Client { get; set; }
+    public string Client { get; set; }
+    public string ClientNumber { get; set; }
 
     public int MaterialId { get; set; }
 

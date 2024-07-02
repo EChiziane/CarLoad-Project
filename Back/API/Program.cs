@@ -26,6 +26,12 @@ builder.Services.AddControllers(opt =>
     opt.Filters.Add(new AuthorizeFilter(policy));
 });
 
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    //options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    // options.JsonSerializerOptions.WriteIndented = true; // Optional: pretty print
+});
+
 /*(config =>
 {
     var policy = new AuthorizationPolicyBuilder()

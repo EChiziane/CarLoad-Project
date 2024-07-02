@@ -1,31 +1,35 @@
-
-body {
+.main-content-component {
+  width: 90%;
+  height: 80%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-
+  background-color: #ffffff;
+  margin: 2% auto;
+  padding: 2%;
 }
 
 .header-page {
   text-align: center;
 }
 
-.full-width-button {
+.button-container {
+  margin-bottom: 10px;
+  text-align: right;
   width: 100%;
-  box-sizing: border-box; /* Garante que a largura inclua padding e borda */
 }
 
-table {
+.table-container {
   width: 100%;
-
-  mat-icon {
-    cursor: pointer;
-  }
+  max-height: 600px; /* Adjust this value as needed */
+  overflow-y: auto;
+  margin-top: 20px;
 }
 
 .mat-elevation-z8 {
-  overflow: auto;
-  max-height: 400px; /* Defina a altura máxima desejada */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+
+

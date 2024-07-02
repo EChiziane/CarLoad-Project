@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Driver} from "../../Model/driver";
 import {HttpClient} from "@angular/common/http";
 import {DriverService} from "../../Services/driver.service";
 import {Router} from "@angular/router";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-driver',
@@ -13,7 +14,8 @@ import {MatTableDataSource} from "@angular/material/table";
 export class DriverComponent implements OnInit {
   drivers: Driver[] | undefined;
   dataSource!: any;
-  displayedColumns: string[] = ['id', 'name', 'birth', 'phoneNumber', 'vehiclePlate', 'vehicleModel', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'birth', 'phoneNumber', 'vehiclePlate', 'vehicleModel','createdBy','createdAt', 'actions'];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private http: HttpClient,
               private driverService: DriverService,
@@ -24,13 +26,11 @@ export class DriverComponent implements OnInit {
     this.getDrivers()
   }
 
-  public getDrivers(): void {
-    this.driverService.getDriver().subscribe({
-      next: (drivers: Driver[]) => {
-        this.drivers = drivers;
-        this.dataSource = new MatTableDataSource<Driver>(this.drivers);
-      }
-    })
+  public getDrivers() {
+    this.driverService.getDriver().subscribe((drivers: Driver[]) => {
+      this.dataSource = new MatTableDataSource<Driver>(drivers);
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
   public deleteDriver(id: number): void {

@@ -36,19 +36,31 @@
         &lt;!&ndash; Position Column &ndash;&gt;
         <ng-container matColumnDef="id">
           <th *matHeaderCellDef mat-header-cell> No.</th>
-          <td *matCellDef="let element" class="mat-table-bolded-id" mat-cell> {{element.id}} </td>
+          <td *matCellDef="let element" class="mat-table-bolded-id" mat-cell> {{ element.id }}</td>
         </ng-container>
 
         &lt;!&ndash; Name Column &ndash;&gt;
         <ng-container matColumnDef="clientName">
           <th *matHeaderCellDef mat-header-cell>Client</th>
-          <td *matCellDef="let element" mat-cell> {{element.clientName}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.clientName }}</td>
+        </ng-container>
+
+        &lt;!&ndash; Name Column &ndash;&gt;
+        <ng-container matColumnDef="clientNumber">
+          <th *matHeaderCellDef mat-header-cell>Client Number</th>
+          <td *matCellDef="let element" mat-cell> {{ element.clientNumber }}</td>
+        </ng-container>
+
+        &lt;!&ndash; Name Column &ndash;&gt;
+        <ng-container matColumnDef="sprint">
+          <th *matHeaderCellDef mat-header-cell>Sprint</th>
+          <td *matCellDef="let element" mat-cell> {{ element.sprint }}</td>
         </ng-container>
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="managerName">
           <th *matHeaderCellDef mat-header-cell>Manager</th>
-          <td *matCellDef="let element" mat-cell> {{element.managerName}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.managerName }}</td>
 
         </ng-container>
 
@@ -56,24 +68,24 @@
         &lt;!&ndash; Symbol Column &ndash;&gt;
         <ng-container matColumnDef="driverName">
           <th *matHeaderCellDef mat-header-cell>Driver</th>
-          <td *matCellDef="let element" mat-cell> {{element.driverName}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.driverName }}</td>
         </ng-container>
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="destination">
           <th *matHeaderCellDef mat-header-cell>Destination</th>
-          <td *matCellDef="let element" mat-cell> {{element.destination}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.destination }}</td>
         </ng-container>
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="earnings">
           <th *matHeaderCellDef mat-header-cell>Earnings</th>
-          <td *matCellDef="let element" mat-cell> {{element.earnings| currency:'USD':'symbol':'1.2-2'}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.earnings| currency:'USD':'symbol':'1.2-2' }}</td>
         </ng-container>
 
         <ng-container matColumnDef="expenses">
           <th *matHeaderCellDef mat-header-cell>Expenses</th>
-          <td *matCellDef="let element" mat-cell> {{element.expenses| currency:'USD':'symbol':'1.2-2'}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.expenses| currency:'USD':'symbol':'1.2-2' }}</td>
         </ng-container>
 
 
@@ -81,39 +93,42 @@
         <ng-container matColumnDef="fuelExpense">
           <th *matHeaderCellDef mat-header-cell>Fuel</th>
           <td *matCellDef="let element"
-              mat-cell> {{element.fuelExpense| currency:'USD':'symbol':'1.2-2'}} </td>
+              mat-cell> {{ element.fuelExpense| currency:'USD':'symbol':'1.2-2' }}
+          </td>
         </ng-container>
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="policeExpense">
           <th *matHeaderCellDef mat-header-cell>Police</th>
           <td *matCellDef="let element"
-              mat-cell> {{element.policeExpense| currency:'USD':'symbol':'1.2-2'}} </td>
+              mat-cell> {{ element.policeExpense| currency:'USD':'symbol':'1.2-2' }}
+          </td>
         </ng-container>
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="materialName">
           <th *matHeaderCellDef mat-header-cell>Material</th>
-          <td *matCellDef="let element" mat-cell> {{element.materialName}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.materialName }}</td>
         </ng-container>
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="purchaseMoney">
           <th *matHeaderCellDef mat-header-cell>Purchase</th>
           <td *matCellDef="let element"
-              mat-cell> {{element.purchaseMoney| currency:'USD':'symbol':'1.2-2'}} </td>
+              mat-cell> {{ element.purchaseMoney| currency:'USD':'symbol':'1.2-2' }}
+          </td>
         </ng-container>
 
 
         &lt;!&ndash; Weight Column &ndash;&gt;
         <ng-container matColumnDef="toll">
           <th *matHeaderCellDef mat-header-cell>Toll</th>
-          <td *matCellDef="let element" mat-cell> {{element.toll| currency:'USD':'symbol':'1.2-2'}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.toll| currency:'USD':'symbol':'1.2-2' }}</td>
         </ng-container>
 
         <ng-container matColumnDef="createdAt">
           <th *matHeaderCellDef mat-header-cell>CreatedAt</th>
-          <td *matCellDef="let element" mat-cell> {{element.createdAt| slice:0:10}} </td>
+          <td *matCellDef="let element" mat-cell> {{ element.createdAt| slice:0:10 }}</td>
         </ng-container>
         &lt;!&ndash; Symbol Column &ndash;&gt;
         <ng-container matColumnDef="actions">

@@ -41,11 +41,19 @@ public class ClientController : BaseApiController
     }
 
     [HttpGet("{id}")]
-    [
-        Authorize]
+    [Authorize]
     [AllowAnonymous]
     public async Task<Client> GetClientById(int id)
     {
         return await _mediator.Send(new GetClientById.GetClientByIdQuery { ClientId = id });
+    }
+
+    [HttpGet("phone/{phoneNumber}")]
+    [Authorize]
+    [AllowAnonymous]
+    public async Task<Client> GetClientByPhoneNumber(string phoneNumber)
+    {
+        return await _mediator.Send(
+            new GetClientByNumberPhone.GetClientByNumberPhoneQuery { PhoneNumber = phoneNumber });
     }
 }

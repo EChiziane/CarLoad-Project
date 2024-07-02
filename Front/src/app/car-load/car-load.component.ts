@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {CarLoad} from "../../Model/car-load";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {CarloadService} from "../../Services/carload.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-car-load',
@@ -12,61 +13,44 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class CarLoadComponent implements OnInit {
   carLoads: CarLoad[] | undefined;
-  displayedColumns: string[] = ['id',
-    'createdAt',
-    'materialName',
-    'earnings',
-    'expenses',
-    'destination',
-    'clientName',
-    'fuelExpense',
-    'policeExpense',
-    'toll',
-    'purchaseMoney',
-    'managerName',
-    'driverName',
-    'actions'];
+  displayedColumns: string[] = [
+    'id', 'createdAt', 'materialName', 'sprint', 'earnings', 'expenses', 'destination',
+    'clientName', 'clientNumber', 'fuelExpense', 'policeExpense', 'toll', 'purchaseMoney',
+    'managerName', 'driverName', 'actions'
+  ];
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  dataSource = new MatTableDataSource<CarLoad>();
 
-  dataSource!: any;
-
-  constructor(private http: HttpClient,
-              private carloadService: CarloadService,
-              private router: Router) {
+  constructor(private carloadService: CarloadService, private router: Router) {
   }
 
   ngOnInit(): void {
-
-    this.getCarLoad()
-
+    this.loadCarLoads();
   }
 
-  public getCarLoad(): void {
-    this.carloadService.getCarLoad().subscribe({
-      next: (carloads: CarLoad[]) => {
-        this.carLoads = carloads;
-        this.dataSource = new MatTableDataSource<CarLoad>(this.carLoads);
-      }
-    })
+  loadCarLoads(): void {
+    this.carloadService.getCarLoad().subscribe((carloads: CarLoad[]) => {
+      this.updateDataSource(carloads);
+    });
   }
 
-
-  public getCarloadToday(): void {
-    this.carloadService.getCarLoadToday().subscribe({
-      next: (carloads: CarLoad[]) => {
-        this.carLoads = carloads;
-        this.dataSource = new MatTableDataSource<CarLoad>(this.carLoads);
-      }
-    })
+  loadCarLoadsToday(): void {
+    this.carloadService.getCarLoadToday().subscribe((carloads: CarLoad[]) => {
+      this.updateDataSource(carloads);
+    });
   }
 
-  public getCarloadRange(startDate: Date, endDate: Date): void {
-    this.carloadService.getCarLoadRange(startDate, endDate).subscribe({
-      next: (carloads: CarLoad[]) => {
-        this.carLoads = carloads;
-        console.log(carloads)
-        this.dataSource = new MatTableDataSource<CarLoad>(this.carLoads);
-      }
-    })
+  loadCarLoadsByRange(startDate: Date, endDate: Date): void {
+    this.carloadService.getCarLoadRange(startDate, endDate).subscribe((carloads: CarLoad[]) => {
+      this.updateDataSource(carloads);
+    });
+  }
+
+  private updateDataSource(carloads: CarLoad[]): void {
+    this.carLoads = carloads;
+    this.dataSource.data = this.carLoads;
+    this.dataSource.paginator = this.paginator;
+    this.paginator._changePageSize(9);
   }
 }

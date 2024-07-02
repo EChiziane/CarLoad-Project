@@ -1,101 +1,90 @@
-<!-- guest-list.component.html -->
-<div class="header-page">
-  <label><h2>Lista de Drivers</h2></label>
+<div class="main-content-component">
+  <div class="header-page">
+    <label><h2>Lista de Drivers</h2></label>
+  </div>
+
+  <div class="button-container">
+    <button
+      [routerLink]="['/driver/create']"
+      class="full-width-button"
+      color="primary"
+      mat-raised-button
+    >
+      Adicionar
+    </button>
+  </div>
+
+  <div class="table-container mat-elevation-z8">
+    <table [dataSource]="dataSource" mat-table>
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell>No.</th>
+        <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th *matHeaderCellDef mat-header-cell>Name</th>
+        <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Birth Date Column -->
+      <ng-container matColumnDef="birth">
+        <th *matHeaderCellDef mat-header-cell>Email</th>
+        <td *matCellDef="let element" mat-cell>{{ element.birthDate }}</td>
+      </ng-container>
+
+      <!-- Phone Number Column -->
+      <ng-container matColumnDef="phoneNumber">
+        <th *matHeaderCellDef mat-header-cell>Phone Number</th>
+        <td *matCellDef="let element" mat-cell>{{ element.phoneNumber }}</td>
+      </ng-container>
+
+      <!-- Vehicle Model Column -->
+      <ng-container matColumnDef="vehicleModel">
+        <th *matHeaderCellDef mat-header-cell>Vehicle Model</th>
+        <td *matCellDef="let element" mat-cell>{{ element.vehicleModel }}</td>
+      </ng-container>
+
+      <!-- Vehicle Plate Column -->
+      <ng-container matColumnDef="vehiclePlate">
+        <th *matHeaderCellDef mat-header-cell>Vehicle Plate</th>
+        <td *matCellDef="let element" mat-cell>{{ element.vehiclePlate }}</td>
+      </ng-container>
+
+      <!-- Vehicle Plate Column -->
+      <ng-container matColumnDef="createdBy">
+        <th *matHeaderCellDef mat-header-cell>Created By</th>
+        <td *matCellDef="let element" mat-cell>{{ element.createdBy }}</td>
+      </ng-container>
+
+      <!-- Vehicle Plate Column -->
+      <ng-container matColumnDef="createdAt">
+        <th *matHeaderCellDef mat-header-cell>Created At</th>
+        <td *matCellDef="let element" mat-cell>{{ element.createdAt }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>Actions</th>
+        <td *matCellDef="let element" mat-cell>
+          <mat-icon [routerLink]="['detail', element.id]">visibility</mat-icon>
+          <mat-icon>edit</mat-icon>
+          <mat-icon (click)="deleteDriver(element.id)">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page of periodic elements"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+
+
 </div>
-
-<div>
-  <button
-    [routerLink]="['/driver/create']" class="full-width-button"
-    color="primary" mat-raised-button>Adicionar
-  </button>
-</div>
-
-
-<!--<div>
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let guest of guests">
-      <td>{{ guest.id }}</td>
-      <td>{{ guest.name }}</td>
-      <td>{{ guest.email }}</td>
-      <td>{{ guest.confirm}}</td>
-      <td>
-        <button [routerLink]="['/detail',guest.id]" >View</button>
-        <button (click)="deleteGuest(guest.id)">Delete</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>-->
-
-<div class="mat-elevation-z8">
-  <table [dataSource]="dataSource" mat-table>
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell> No.</th>
-      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th *matHeaderCellDef mat-header-cell> Name</th>
-      <td *matCellDef="let element" mat-cell> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="birth">
-      <th *matHeaderCellDef mat-header-cell> Email</th>
-      <td *matCellDef="let element" mat-cell> {{element.birthDate}} </td>
-
-    </ng-container>
-
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="phoneNumber">
-      <th *matHeaderCellDef mat-header-cell> Phone Number</th>
-      <td *matCellDef="let element" mat-cell> {{element.phoneNumber}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="vehicleModel">
-      <th *matHeaderCellDef mat-header-cell> Vehicle Model</th>
-      <td *matCellDef="let element" mat-cell> {{element.vehicleModel}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="vehiclePlate">
-      <th *matHeaderCellDef mat-header-cell> Vehicle Plate</th>
-      <td *matCellDef="let element" mat-cell> {{element.vehiclePlate}} </td>
-    </ng-container>
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="actions">
-      <th *matHeaderCellDef mat-header-cell> Actions</th>
-      <td *matCellDef="let element" mat-cell>
-        <mat-icon [routerLink]="['detail',element.id]">visibility</mat-icon>
-        <mat-icon>edit</mat-icon>
-        <mat-icon (click)="deleteDriver(element.id)">delete</mat-icon>
-      </td>
-    </ng-container>
-
-    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                 aria-label="Select page of periodic elements"
-                 showFirstLastButtons>
-  </mat-paginator>
-</div>
-
-
-

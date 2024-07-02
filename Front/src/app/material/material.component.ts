@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Material} from "../../Model/material";
 import {HttpClient} from "@angular/common/http";
 import {MaterialService} from "../../Services/material.service";
 import {Router} from "@angular/router";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-material',
@@ -14,7 +15,8 @@ export class MaterialComponent implements OnInit {
 
   materials: Material[] | undefined;
   dataSource!: any;
-  displayedColumns: string[] = ['id', 'type', 'actions'];
+  displayedColumns: string[] = ['id', 'type','createdBy','createdAt', 'actions'];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private http: HttpClient,
               private materialService: MaterialService,
@@ -25,13 +27,12 @@ export class MaterialComponent implements OnInit {
     this.getMaterials()
   }
 
-  public getMaterials(): void {
-    this.materialService.getMaterials().subscribe({
-      next: (materials: Material[]) => {
-        this.materials = materials;
-        this.dataSource = new MatTableDataSource<Material>(this.materials);
-      }
-    })
+  public getMaterials() {
+    this.materialService.getMaterials().subscribe((materials: Material[]) => {
+      this.materials = materials;
+      this.dataSource = new MatTableDataSource<Material>(this.materials);
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
   public deleteMaterial(id: number): void {

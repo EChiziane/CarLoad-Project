@@ -28,14 +28,14 @@ export class AddDriverComponent implements OnInit {
 
   public createDriver(): void {
     this.driverService.addDriver(this.profileForm.value).subscribe(() => {
-      this.router.navigate([''])
+      this.router.navigate(['/driver'])
     })
 
 
   }
 
   public cancelOperation(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/driver']);
   }
 
 

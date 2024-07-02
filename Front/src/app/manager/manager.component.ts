@@ -13,7 +13,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class ManagerComponent implements OnInit {
   managers!: Manager[];
   dataSource!: any;
-  displayedColumns: string[] = ['id', 'name', 'phoneNumber', 'email', 'actions']
+  displayedColumns: string[] = ['id', 'name', 'phoneNumber', 'email','createdBy','createdAt', 'actions']
 
   constructor(private http: HttpClient,
               private managerService: ManagerService,

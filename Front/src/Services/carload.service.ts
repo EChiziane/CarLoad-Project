@@ -18,12 +18,15 @@ export class CarloadService {
   }
 
   public deleteCarLoad(id: number): Observable<CarLoad> {
-    return this.http.delete<CarLoad>(`${this.baseURL}/${id}`)
+    console.log(`${this.baseURL}/${id}`)
+    return this.http.delete<CarLoad>(`${this.baseURL}${id}`)
+
   }
 
   public getCarLoadById(id: number): Observable<CarLoad> {
     return this.http.get<CarLoad>(`${this.baseURL}/${id}`);
   }
+
 
   public getCarLoadToday(): Observable<CarLoad[]> {
     return this.http.get<CarLoad[]>(this.baseURL + "/today");
@@ -39,6 +42,10 @@ export class CarloadService {
 
   public addCarLoad(driver: any): Observable<any> {
     return this.http.post<any>(this.baseURL, driver).pipe(take(1))
+  }
+
+  public getCarLoadBySprint(sprintId: number): Observable<CarLoad[]> {
+    return this.http.get<CarLoad[]>(`${this.baseURL}/sprint/${sprintId}`);
   }
 
 }

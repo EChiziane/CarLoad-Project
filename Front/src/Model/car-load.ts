@@ -1,6 +1,7 @@
 export interface CarLoad {
   id: number;
   destination: string;
+  clientNumber: string;
   earnings: number;
   expenses: number;
   fuelExpense: number;
@@ -9,9 +10,13 @@ export interface CarLoad {
   managerExpense: number;
   purchaseMoney: number,
   toll: number;
+  sprint: string;
   driverName: string;
   managerName: string;
   clientName: string;
   materialName: string;
-  createdAt: Date;
+  createdBy: string;
+  createdAt: string;
 }
+
+

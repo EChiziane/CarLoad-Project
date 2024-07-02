@@ -30,8 +30,13 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ClientId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Client")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ClientNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -83,8 +88,6 @@ namespace Persistence.Migrations
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
 
                     b.HasIndex("CreatedByUserId");
 
@@ -630,12 +633,6 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.CarLoad", b =>
                 {
-                    b.HasOne("Domain.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.ApplicationUser", "CreatedByUser")
                         .WithMany()
                         .HasForeignKey("CreatedByUserId");
@@ -663,12 +660,10 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Sprint", "Sprint")
-                        .WithMany()
+                        .WithMany("CarLoads")
                         .HasForeignKey("SprintId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Client");
 
                     b.Navigation("CreatedByUser");
 
@@ -860,6 +855,11 @@ namespace Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Sprint", b =>
+                {
+                    b.Navigation("CarLoads");
                 });
 #pragma warning restore 612, 618
         }

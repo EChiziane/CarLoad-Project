@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Client} from "../../Model/client";
 import {HttpClient} from "@angular/common/http";
 import {ClientService} from "../../Services/client.service";
 import {Router} from "@angular/router";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-client',
@@ -12,33 +13,33 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class ClientComponent implements OnInit {
   clients: Client[] | undefined;
-  dataSource!: any;
   displayedColumns: string[] = ['id', 'name', 'phoneNumber', 'actions'];
 
-  constructor(private http: HttpClient,
-              private clientService: ClientService,
-              private router: Router) {
-  }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  dataSource = new MatTableDataSource<Client>();
+
+  constructor(private clientService: ClientService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getClients()
-
+    this.loadClients();
   }
 
-  public getClients(): void {
-    this.clientService.getClient().subscribe({
-      next: (clients: Client[]) => {
-        this.clients = clients;
-        this.dataSource = new MatTableDataSource<Client>(this.clients);
-      }
-    })
+  loadClients(): void {
+    this.clientService.getClient().subscribe((clients: Client[]) => {
+      this.updateDataSource(clients);
+    });
   }
 
-  public deleteClient(id: number): void {
+  deleteClient(id: number): void {
     this.clientService.deleteClient(id).subscribe(() => {
-      this.getClients()
-    })
+      this.loadClients();
+    });
   }
 
-
+  private updateDataSource(clients: Client[]): void {
+    this.clients = clients;
+    this.dataSource.data = this.clients;
+    this.dataSource.paginator = this.paginator;
+    this.paginator._changePageSize(10); // Definindo o tamanho da página como 10 por padrão
+  }
 }

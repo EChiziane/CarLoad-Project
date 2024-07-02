@@ -3,4 +3,6 @@ export interface Manager {
   name: string;
   phoneNumber: string;
   email: string;
+  createdBy: string;
+  createdAt: string;
 }

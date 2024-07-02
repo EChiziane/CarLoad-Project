@@ -19,8 +19,6 @@ import {MatListModule} from "@angular/material/list";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatInputModule} from "@angular/material/input";
-import {AddGuestComponent} from "./guest/add-guest/add-guest.component";
-import {GuestDetailsComponent} from "./guest/guest-details/guest-details.component";
 import {DriverDetailsComponent} from "./driver/driver-details/driver-details.component";
 import {AddClientComponent} from "./client/add-client/add-client.component";
 import {ClientComponent} from "./client/client.component";
@@ -35,19 +33,17 @@ import {ManagerComponent} from "./manager/manager.component";
 import {AddManagerComponent} from "./manager/add-manager/add-manager.component";
 import {LayoutComponent} from "./layout/layout.component";
 import {SideNavComponent} from "./layout/side-nav/side-nav.component";
-import {CloadComponent} from "./cload/cload.component";
-import {DataPickerComponent} from "./data-picker/data-picker.component";
 import {DriverComponent} from "./driver/driver.component";
 import {AddDriverComponent} from "./driver/add-driver/add-driver.component";
-import {GuestComponent} from "./guest/guest.component";
+import {ModelagemComponent} from './modelagem/modelagem.component';
+import {SprintComponent} from './sprint/sprint.component';
+import {AddSprintComponent} from './sprint/add-sprint/add-sprint.component';
+import {ListCarloadsComponent} from './sprint/list-carloads/list-carloads.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GuestComponent,
-    AddGuestComponent,
-    GuestDetailsComponent,
     DriverComponent,
     AddDriverComponent,
     DriverDetailsComponent,
@@ -64,8 +60,10 @@ import {GuestComponent} from "./guest/guest.component";
     AddManagerComponent,
     LayoutComponent,
     SideNavComponent,
-    CloadComponent,
-    DataPickerComponent,
+    ModelagemComponent,
+    SprintComponent,
+    AddSprintComponent,
+    ListCarloadsComponent,
 
   ],
   imports: [

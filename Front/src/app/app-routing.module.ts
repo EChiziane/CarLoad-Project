@@ -1,8 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {GuestDetailsComponent} from "./guest/guest-details/guest-details.component";
-import {GuestComponent} from "./guest/guest.component";
-import {AddGuestComponent} from "./guest/add-guest/add-guest.component";
 import {DriverComponent} from "./driver/driver.component";
 import {AddDriverComponent} from "./driver/add-driver/add-driver.component";
 import {DriverDetailsComponent} from "./driver/driver-details/driver-details.component";
@@ -17,10 +14,11 @@ import {AddMaterialComponent} from "./material/add-material/add-material.compone
 import {ManagerComponent} from "./manager/manager.component";
 import {AddManagerComponent} from "./manager/add-manager/add-manager.component";
 
+import {SprintComponent} from "./sprint/sprint.component";
+import {AddSprintComponent} from "./sprint/add-sprint/add-sprint.component";
+import {ListCarloadsComponent} from "./sprint/list-carloads/list-carloads.component";
+
 const routes: Routes = [
-  {path: 'detail/:id', component: GuestDetailsComponent},
-  {path: 'create', component: AddGuestComponent},
-  {path: 'guest', component: GuestComponent},
   {path: 'driver', component: DriverComponent},
   {path: 'driver/create', component: AddDriverComponent},
   {path: 'driver/detail/:id', component: DriverDetailsComponent},
@@ -34,6 +32,9 @@ const routes: Routes = [
   {path: 'material/create', component: AddMaterialComponent},
   {path: 'manager', component: ManagerComponent},
   {path: 'manager/create', component: AddManagerComponent},
+  {path: 'sprint', component: SprintComponent},
+  {path: 'sprint/create', component: AddSprintComponent},
+  {path: 'sprint/list/:id', component: ListCarloadsComponent},
   {path: '', component: CarLoadComponent}
 ];
 

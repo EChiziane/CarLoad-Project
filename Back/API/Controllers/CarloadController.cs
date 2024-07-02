@@ -51,8 +51,15 @@ public class CarloadController : BaseApiController
 
     [HttpGet("{id}")]
     [AllowAnonymous]
-    public async Task<CarLoad> GetCarLoadById(int id)
+    public async Task<CarLoadDto> GetCarLoadById(int id)
     {
         return await _mediator.Send(new GetCarloadById.GetCarLoadByIdQuery { CarLoadId = id });
+    }
+
+    [HttpGet("sprint/{sprintId}")]
+    [AllowAnonymous]
+    public async Task<List<CarLoadDto>> GetCarLoadsBySprint(int sprintId)
+    {
+        return await _mediator.Send(new GetCarLoadsBySprint.GetCarLoadsBySprintQuery { SprintId = sprintId });
     }
 }

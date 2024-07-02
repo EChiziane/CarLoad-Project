@@ -25,14 +25,14 @@ export class AddMaterialComponent implements OnInit {
 
   public createMaterial(): void {
     this.materialService.addMaterial(this.profileForm.value).subscribe(() => {
-      this.router.navigate([''])
+      this.router.navigate(['/material'])
     })
 
 
   }
 
   public cancelOperation(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/material']);
   }
 
 

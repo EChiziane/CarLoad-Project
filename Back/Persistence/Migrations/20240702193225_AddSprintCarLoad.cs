@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Persistence.Migrations
 {
-    public partial class AddMaterialManagerDto5 : Migration
+    public partial class AddSprintCarLoad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -359,6 +359,40 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sprints",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    DriverId = table.Column<int>(type: "integer", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedByUserId = table.Column<string>(type: "text", nullable: true),
+                    LastUpdatedByUserId = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sprints", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Sprints_AspNetUsers_CreatedByUserId",
+                        column: x => x.CreatedByUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Sprints_AspNetUsers_LastUpdatedByUserId",
+                        column: x => x.LastUpdatedByUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Sprints_Drivers_DriverId",
+                        column: x => x.DriverId,
+                        principalTable: "Drivers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CarLoads",
                 columns: table => new
                 {
@@ -369,14 +403,15 @@ namespace Persistence.Migrations
                     FuelExpense = table.Column<decimal>(type: "numeric", nullable: false),
                     PoliceExpense = table.Column<decimal>(type: "numeric", nullable: false),
                     Toll = table.Column<decimal>(type: "numeric", nullable: false),
-                    Expenses = table.Column<decimal>(type: "numeric", nullable: false),
                     DriverExpenses = table.Column<decimal>(type: "numeric", nullable: false),
                     ManagerExpenses = table.Column<decimal>(type: "numeric", nullable: false),
                     PurchaseMoney = table.Column<decimal>(type: "numeric", nullable: false),
                     DriverId = table.Column<int>(type: "integer", nullable: false),
                     ManagerId = table.Column<int>(type: "integer", nullable: false),
-                    ClientId = table.Column<int>(type: "integer", nullable: false),
+                    Client = table.Column<string>(type: "text", nullable: false),
+                    ClientNumber = table.Column<string>(type: "text", nullable: false),
                     MaterialId = table.Column<int>(type: "integer", nullable: false),
+                    SprintId = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "text", nullable: true),
@@ -396,12 +431,6 @@ namespace Persistence.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_CarLoads_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_CarLoads_Drivers_DriverId",
                         column: x => x.DriverId,
                         principalTable: "Drivers",
@@ -417,6 +446,12 @@ namespace Persistence.Migrations
                         name: "FK_CarLoads_Materials_MaterialId",
                         column: x => x.MaterialId,
                         principalTable: "Materials",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CarLoads_Sprints_SprintId",
+                        column: x => x.SprintId,
+                        principalTable: "Sprints",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -459,11 +494,6 @@ namespace Persistence.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarLoads_ClientId",
-                table: "CarLoads",
-                column: "ClientId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_CarLoads_CreatedByUserId",
                 table: "CarLoads",
                 column: "CreatedByUserId");
@@ -487,6 +517,11 @@ namespace Persistence.Migrations
                 name: "IX_CarLoads_MaterialId",
                 table: "CarLoads",
                 column: "MaterialId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CarLoads_SprintId",
+                table: "CarLoads",
+                column: "SprintId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_CreatedByUserId",
@@ -549,6 +584,21 @@ namespace Persistence.Migrations
                 column: "LastUpdatedByUserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Sprints_CreatedByUserId",
+                table: "Sprints",
+                column: "CreatedByUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sprints_DriverId",
+                table: "Sprints",
+                column: "DriverId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sprints_LastUpdatedByUserId",
+                table: "Sprints",
+                column: "LastUpdatedByUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SystemLanguages_CreatedByUserId",
                 table: "SystemLanguages",
                 column: "CreatedByUserId");
@@ -583,6 +633,9 @@ namespace Persistence.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
+                name: "Clients");
+
+            migrationBuilder.DropTable(
                 name: "Guests");
 
             migrationBuilder.DropTable(
@@ -592,16 +645,16 @@ namespace Persistence.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Clients");
-
-            migrationBuilder.DropTable(
-                name: "Drivers");
-
-            migrationBuilder.DropTable(
                 name: "Managers");
 
             migrationBuilder.DropTable(
                 name: "Materials");
+
+            migrationBuilder.DropTable(
+                name: "Sprints");
+
+            migrationBuilder.DropTable(
+                name: "Drivers");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

@@ -8,6 +8,8 @@ public class CarLoadDto
     public decimal FuelExpense { get; set; }
     public decimal PoliceExpense { get; set; }
     public string ClientName { get; set; }
+    public string ClientNumber { get; set; }
+    public string Sprint { get; set; }
     public string ManagerName { get; set; }
     public string MaterialName { get; set; }
     public string DriverName { get; set; }

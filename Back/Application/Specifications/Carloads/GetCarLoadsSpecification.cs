@@ -6,9 +6,9 @@ public class GetCarLoadsSpecification : BaseSpecification<CarLoad>
 {
     public GetCarLoadsSpecification()
     {
-        AddInclude(x => x.Client);
         AddInclude(x => x.Driver);
         AddInclude(x => x.Manager);
         AddInclude(x => x.Material);
+        AddInclude(x => x.Sprint);
     }
 }

@@ -1,7 +1,9 @@
 <div class="container">
+
   <div class="header-page">
-    <mat-label><h2>Insert CarLoad</h2></mat-label>
+    <mat-label class="custom-header"><h2>Insert CarLoad</h2></mat-label>
   </div>
+
 
   <div class="mat-main-content">
 
@@ -11,13 +13,14 @@
         <div class="mat-add-client">
           <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Costumer Name</mat-label>
-            <mat-select formControlName="clientId">
-              <mat-option *ngFor="let client of clients" [value]="client.id">
-                {{ client.name}}
-              </mat-option>
-            </mat-select>
+            <input formControlName="clientName" matInput placeholder="Cliente" value="">
           </mat-form-field>
 
+          <br>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Costumer Number</mat-label>
+            <input formControlName="clientNumber" matInput placeholder="Client Number" value="">
+          </mat-form-field>
 
           <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Destination</mat-label>
@@ -29,7 +32,7 @@
             <mat-label>Material</mat-label>
             <mat-select formControlName="materialId">
               <mat-option *ngFor="let material of materials" [value]="material.id">
-                {{ material.type}}
+                {{ material.type }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -65,7 +68,7 @@
             <mat-label>Driver Name</mat-label>
             <mat-select formControlName="driverId">
               <mat-option *ngFor="let driver of drivers" [value]="driver.id">
-                {{ driver.name}}
+                {{ driver.name }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -74,20 +77,36 @@
             <mat-label>Manager</mat-label>
             <mat-select formControlName="managerId">
               <mat-option *ngFor="let manager of managers" [value]="manager.id">
-                {{ manager.name}}
+                {{ manager.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Sprinter</mat-label>
+            <mat-select formControlName="sprintId">
+              <mat-option *ngFor="let sprinter of sprinters" [value]="sprinter.id">
+                {{ sprinter.name }}
               </mat-option>
             </mat-select>
           </mat-form-field>
 
         </div>
 
-
       </div>
     </form>
+
+    <div class="mat-add-actions">
+      <button (click)="cancelOperation()" color="warn" mat-flat-button type="cancel">Cancel</button>
+      <button (click)="createCarLoad()" color="primary" mat-flat-button type="submit">Save</button>
+
+    </div>
   </div>
-  <div class="mat-add-actions">
-    <button color="primary" mat-button type="submit">Save</button>
-    <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
-  </div>
+
+
+  <!-- <div class="mat-add-actions">
+      <button (click)="cancelOperation()" color="warn" mat-button type="cancel">Cancel</button>
+      <button (click)="createCarLoad()" color="primary" mat-button type="submit">Save</button>
+    </div>-->
 
 </div>

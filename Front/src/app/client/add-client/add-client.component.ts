@@ -26,12 +26,12 @@ export class AddClientComponent implements OnInit {
 
   public createClient(): void {
     this.clientService.addClient(this.profileForm.value).subscribe(() => {
-      this.router.navigate([''])
+      this.router.navigate(['/client'])
     })
   }
 
   public cancelOperation(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/client']);
   }
 
 

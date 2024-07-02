@@ -1,0 +1,84 @@
+<div class="main-content-component">
+
+  <div class="header-page">
+    <label><h2>Lista de Sprints</h2></label>
+  </div>
+
+  <div class="button-container">
+    <button
+      [routerLink]="['/sprint/create']"
+      class="full-width-button"
+      color="primary"
+      mat-raised-button
+    >
+      Adicionar
+    </button>
+  </div>
+
+  <div class="table-container mat-elevation-z8">
+    <table [dataSource]="dataSource" mat-table>
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell>No.</th>
+        <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th *matHeaderCellDef mat-header-cell>Name</th>
+        <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th *matHeaderCellDef mat-header-cell>Status</th>
+        <td *matCellDef="let element" mat-cell>{{ element.status }}</td>
+      </ng-container>
+
+      <!-- Driver Name Column -->
+      <ng-container matColumnDef="driverName">
+        <th *matHeaderCellDef mat-header-cell>Driver Name</th>
+        <td *matCellDef="let element" mat-cell>{{ element.driverName }}</td>
+      </ng-container>
+
+      <!-- Driver Name Column -->
+      <ng-container matColumnDef="contCarLoad">
+        <th *matHeaderCellDef mat-header-cell>Capacidade</th>
+        <td *matCellDef="let element" mat-cell>{{ element.numberCarLoad }}</td>
+      </ng-container>
+
+      <!-- Created By Column -->
+      <ng-container matColumnDef="createdBy">
+        <th *matHeaderCellDef mat-header-cell>Created By</th>
+        <td *matCellDef="let element" mat-cell>{{ element.createdBy }}</td>
+      </ng-container>
+
+      <!-- Created At Column -->
+      <ng-container matColumnDef="createdAt">
+        <th *matHeaderCellDef mat-header-cell>Created At</th>
+        <td *matCellDef="let element" mat-cell>{{ element.createdAt }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>Actions</th>
+        <td *matCellDef="let element" mat-cell>
+          <mat-icon [routerLink]="['list', element.id]">visibility</mat-icon>
+          <mat-icon>edit</mat-icon>
+          <mat-icon (click)="deleteSprint(element.id)">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page of periodic elements"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+
+</div>
