@@ -1,0 +1,203 @@
+/* content.component.scss */
+
+/* Estilos gerais do conteúdo */
+.content {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+/* Seção de Cards */
+.card-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: space-between; /* Alinhar os cards na mesma linha */
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 22%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  padding: 1rem;
+  flex: 1;
+}
+
+.card-capacity-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-capacity {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.capacity-label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.capacity-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.globe-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globe-icon i {
+  font-size: 2rem; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+.card-footer {
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.card-footer .btn {
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.card-footer .btn:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Seção da Tabela de Produtos */
+.product-table-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-input, .date-input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-input::placeholder, .date-input::placeholder {
+  color: #666;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+}
+
+.add-button, .print-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover, .print-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos da tabela */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.product-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.actions {
+  text-align: center;
+}
+
+.action-icon {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: #007bff; /* Cor padrão dos ícones */
+  font-size: 1.25rem; /* Tamanho dos ícones */
+  transition: color 0.3s ease; /* Transição para efeito hover */
+}
+
+.action-icon:hover {
+  color: #0056b3; /* Cor dos ícones ao passar o mouse */
+}
+
+/* Seção de Gráfico */
+.chart-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.chart-section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+#salesChart {
+  max-width: 100%;
+  height: 400px;
+}
+
+/* CSS para impressão */
+@media print {
+  .actions, .product-table th:nth-child(6), .product-table td:nth-child(6) {
+    display: none !important; /* Oculta a coluna de ações e seu cabeçalho na impressão */
+  }
+}
+/* Estilo para o título do modal */
+.modal-title {
+  font-size: 1.5rem; /* Ajuste o tamanho da fonte conforme necessário */
+  text-align: center; /* Centraliza o título */
+}

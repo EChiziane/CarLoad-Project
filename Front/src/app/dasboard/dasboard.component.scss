@@ -1,0 +1,36 @@
+/* app.component.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container-fluid {
+  height: 100vh; /* Ocupa toda a altura da janela de visualização */
+  padding: 0;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  height: 100%;
+}
+
+.sidebar-container {
+  width: 10%;
+  float: left;
+  height: 100%;
+}
+
+.col-10 {
+  width: 90%;
+  float: left;
+  padding: 0;
+  height: 100%;
+}
+
+.content-container {
+  height: calc(100% - 80px); /* Altura total menos a altura do cabeçalho */
+  overflow-y: auto; /* Permite rolagem caso o conteúdo ultrapasse a altura disponível */
+  padding: 2rem;
+  background-color: var(--background-color);
+}

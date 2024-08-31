@@ -1,0 +1,13 @@
+/* header.component.css */
+.navbar {
+  background-color: var(--primary-color); /* Usa a variável CSS para cor */
+  color: #fff;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  color: #fff;
+}

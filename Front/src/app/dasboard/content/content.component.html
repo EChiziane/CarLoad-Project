@@ -1,0 +1,485 @@
+<div class="content">
+  <!-- Seção de Cards -->
+  <div class="card-section">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-capacity-container">
+          <div class="card-capacity">
+            <div class="capacity-label">Capacidade</div>
+            <div class="capacity-value">150G</div>
+          </div>
+          <div class="globe-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn">Listar <i class="fas fa-list"></i></a>
+      </div>
+    </div>
+    <!-- Repita o bloco acima para os outros cards -->
+    <div class="card">
+      <div class="card-body">
+        <div class="card-capacity-container">
+          <div class="card-capacity">
+            <div class="capacity-label">Capacidade</div>
+            <div class="capacity-value">150G</div>
+          </div>
+          <div class="globe-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn">Listar <i class="fas fa-list"></i></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-capacity-container">
+          <div class="card-capacity">
+            <div class="capacity-label">Capacidade</div>
+            <div class="capacity-value">150G</div>
+          </div>
+          <div class="globe-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn">Listar <i class="fas fa-list"></i></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-capacity-container">
+          <div class="card-capacity">
+            <div class="capacity-label">Capacidade</div>
+            <div class="capacity-value">150G</div>
+          </div>
+          <div class="globe-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn">Listar <i class="fas fa-list"></i></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-capacity-container">
+          <div class="card-capacity">
+            <div class="capacity-label">Capacidade</div>
+            <div class="capacity-value">150G</div>
+          </div>
+          <div class="globe-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn">Listar <i class="fas fa-list"></i></a>
+      </div>
+    </div>
+    <!-- Adicione mais cards conforme necessário -->
+  </div>
+
+  <!-- Seção de Tabela de Produtos -->
+  <div class="product-table-section">
+    <div class="table-header">
+      <h2>Produtos</h2>
+      <div class="table-actions">
+        <input type="text" class="search-input" placeholder="Pesquisar produtos...">
+        <input type="date" class="date-input" placeholder="Data Início">
+        <input type="date" class="date-input" placeholder="Data Fim">
+        <button class="add-button" data-bs-toggle="modal" data-bs-target="#addProductModal">Adicionar</button>
+        <button class="print-button" (click)="printTable()">Imprimir</button>
+      </div>
+    </div>
+    <!-- Adicione o modal aqui -->
+
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addProductModalLabel">Adicionar Produto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="productName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="productName" placeholder="Nome do produto">
+              </div>
+              <div class="mb-3">
+                <label for="productDescription" class="form-label">Descrição</label>
+                <textarea class="form-control" id="productDescription" rows="3" placeholder="Descrição do produto"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="productPrice" class="form-label">Preço</label>
+                <input type="text" class="form-control" id="productPrice" placeholder="Preço do produto">
+              </div>
+              <div class="mb-3">
+                <label for="productQuantity" class="form-label">Quantidade</label>
+                <input type="number" class="form-control" id="productQuantity" placeholder="Quantidade do produto">
+              </div>
+              <!-- Adicione mais campos conforme necessário -->
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table id="productTable" class="product-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>Samsung Galaxy S21</td>
+        <td>Smartphone Samsung Galaxy S21</td>
+        <td>R$ 3.500,00</td>
+        <td>50</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tecno Camon 18</td>
+        <td>Smartphone Tecno Camon 18</td>
+        <td>R$ 1.200,00</td>
+        <td>100</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>iPhone 13</td>
+        <td>Smartphone iPhone 13</td>
+        <td>R$ 7.000,00</td>
+        <td>30</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Samsung Galaxy S21</td>
+        <td>Smartphone Samsung Galaxy S21</td>
+        <td>R$ 3.500,00</td>
+        <td>50</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tecno Camon 18</td>
+        <td>Smartphone Tecno Camon 18</td>
+        <td>R$ 1.200,00</td>
+        <td>100</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>iPhone 13</td>
+        <td>Smartphone iPhone 13</td>
+        <td>R$ 7.000,00</td>
+        <td>30</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Samsung Galaxy S21</td>
+        <td>Smartphone Samsung Galaxy S21</td>
+        <td>R$ 3.500,00</td>
+        <td>50</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tecno Camon 18</td>
+        <td>Smartphone Tecno Camon 18</td>
+        <td>R$ 1.200,00</td>
+        <td>100</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>iPhone 13</td>
+        <td>Smartphone iPhone 13</td>
+        <td>R$ 7.000,00</td>
+        <td>30</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Samsung Galaxy S21</td>
+        <td>Smartphone Samsung Galaxy S21</td>
+        <td>R$ 3.500,00</td>
+        <td>50</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tecno Camon 18</td>
+        <td>Smartphone Tecno Camon 18</td>
+        <td>R$ 1.200,00</td>
+        <td>100</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>iPhone 13</td>
+        <td>Smartphone iPhone 13</td>
+        <td>R$ 7.000,00</td>
+        <td>30</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Samsung Galaxy S21</td>
+        <td>Smartphone Samsung Galaxy S21</td>
+        <td>R$ 3.500,00</td>
+        <td>50</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tecno Camon 18</td>
+        <td>Smartphone Tecno Camon 18</td>
+        <td>R$ 1.200,00</td>
+        <td>100</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>iPhone 13</td>
+        <td>Smartphone iPhone 13</td>
+        <td>R$ 7.000,00</td>
+        <td>30</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Samsung Galaxy S21</td>
+        <td>Smartphone Samsung Galaxy S21</td>
+        <td>R$ 3.500,00</td>
+        <td>50</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Tecno Camon 18</td>
+        <td>Smartphone Tecno Camon 18</td>
+        <td>R$ 1.200,00</td>
+        <td>100</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>iPhone 13</td>
+        <td>Smartphone iPhone 13</td>
+        <td>R$ 7.000,00</td>
+        <td>30</td>
+        <td class="actions">
+          <a href="#" class="action-icon" title="Detalhes">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a href="#" class="action-icon" title="Editar">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="action-icon" title="Apagar">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </td>
+      </tr>
+      <!-- Adicione mais linhas conforme necessário -->
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Seção de Gráfico -->
+  <div class="chart-section">
+    <h2>Gráfico de Vendas</h2>
+    <canvas id="salesChart"></canvas>
+  </div>
+</div>

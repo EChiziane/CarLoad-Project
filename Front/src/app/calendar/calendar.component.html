@@ -1,0 +1,40 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <ngb-datepicker [(ngModel)]="model" (ngModelChange)="onDateSelect($event)" class="mx-auto"></ngb-datepicker>
+    </div>
+    <div class="col-md-6">
+      <!-- Botões ficam desativados quando 'model' é null (nenhum dia selecionado) -->
+      <button class="btn btn-primary" (click)="toggleInput()" [disabled]="!model">Inserir Informação</button>
+      <button class="btn btn-secondary" (click)="toggleView()" [disabled]="!model">Ver Informação</button>
+
+      <div *ngIf="showInput" class="mt-3">
+        <h5>Inserir Informação para o dia selecionado</h5>
+        <textarea [(ngModel)]="info" class="form-control" rows="3" placeholder="Escreva aqui..."></textarea>
+        <button class="btn btn-success mt-2" (click)="saveInfo()">Gravar Informação</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela para exibir todas as informações ou informações filtradas -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <h5 *ngIf="model">Informações para o dia: {{ model.year }}-{{ model.month }}-{{ model.day }}</h5>
+      <h5 *ngIf="!model">Todas as Informações</h5>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Data</th>
+          <th>Descrição</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let dia of displayedDays">
+          <td>{{ dia.data }}</td>
+          <td>{{ dia.informacao.descricao! || 'Nenhuma informação disponível' }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

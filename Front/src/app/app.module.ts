@@ -40,6 +40,13 @@ import {SprintComponent} from './sprint/sprint.component';
 import {AddSprintComponent} from './sprint/add-sprint/add-sprint.component';
 import {ListCarloadsComponent} from './sprint/list-carloads/list-carloads.component';
 
+import { DasboardComponent } from './dasboard/dasboard.component';
+import {SidebarComponent} from "./dasboard/sidebar/sidebar.component";
+import {HeaderComponent} from "./dasboard/header/header.component";
+import {ContentComponent} from "./dasboard/content/content.component";
+import { CalendarComponent } from './calendar/calendar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +71,11 @@ import {ListCarloadsComponent} from './sprint/list-carloads/list-carloads.compon
     SprintComponent,
     AddSprintComponent,
     ListCarloadsComponent,
+    HeaderComponent,
+    SidebarComponent,
+    ContentComponent,
+    DasboardComponent,
+    CalendarComponent,
 
   ],
   imports: [
@@ -87,6 +99,7 @@ import {ListCarloadsComponent} from './sprint/list-carloads/list-carloads.compon
     MatSidenavModule,
     MatListModule,
     MatTabsModule,
+    NgbModule,
 
   ],
   providers: [],
